@@ -1,0 +1,29 @@
+
+.accordion-item {
+    border: 0;
+}
+.accordion-item:first-of-type, .accordion-item:last-of-type {
+    border-radius: 0;
+}
+.accordion-button:focus {
+    box-shadow: none;
+}
+.accordion-button:not(.collapsed) {
+    box-shadow: none;
+}
+.accordion-item:first-of-type .accordion-button {
+    border-radius: 0;
+}
+.accordion-button.collapsed {
+    color: #333333;
+}
+
+.outer.accordion-button.collapse::after {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.outer.accordion-button::after {
+  margin-left: 0px;
+  margin-right: 0px;
+}

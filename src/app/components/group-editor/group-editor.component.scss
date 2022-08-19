@@ -1,0 +1,8 @@
+.accordion-button:not(.collapsed) {
+    background-color: white
+}
+.form-control-color {
+    border: none;
+    padding: 0;
+}
+@import "~/src/accordionfix.scss"

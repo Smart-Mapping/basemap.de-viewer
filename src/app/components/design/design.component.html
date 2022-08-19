@@ -1,0 +1,30 @@
+<div class="accordion-item">
+  <h2 class="accordion-header" id="headingDesign">
+    <button class="outer accordion-button collapsed fs-6" type="button" data-bs-toggle="collapse"
+      data-bs-target="#collapseDesign" aria-expanded="true" aria-controls="collapseDesign">
+      <i class="bi bi-map me-2 fs-5"></i>Stile
+      <i class="bi bi-info-circle info me-3 fs-5" role="tooltip" data-bs-toggle="tooltip" data-bs-placement="right" title="Hier befindet sich eine Auswahl an vorgefertigten Styles, eine Einbindung von externen Styles über URL ist möglich."></i>
+    </button>
+  </h2>
+  <div id="collapseDesign" class="accordion-collapse collapse" aria-labelledby="headingDesign"
+    data-bs-parent="#accordionSidebar">
+    <div class="accordion-body">
+      <div class="style-wrapper" #styleWrapper>
+        <ng-container *ngFor="let basemap of this.mapService.basemaps; let i = index">
+          <div class="basemap rounded" (click)="setBasemap(basemap, i)" *ngIf="basemap.name !== 'external'">
+            <div *ngIf="basemap.isBeta" class="beta-tag py-1">Beta</div>
+            <img src="{{basemap.image}}" class="rounded-top">
+            <div class="py-1 text-center style-name rounded-bottom">{{basemap.name}}</div>
+          </div>
+        </ng-container>
+        <div class="basemap rounded">
+          <button class="extern-btn" data-bs-toggle="modal" data-bs-target="#externModal">
+            <div class="url-icon d-flex justify-content-center align-items-center border border-bottom-0 rounded-top"
+              style="width: 100%; height: 100%;"><i style="font-size: 40px;" class="bi bi-link-45deg"></i></div>
+            <div class="py-1 text-center w-100 style-name rounded-bottom">Extern</div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

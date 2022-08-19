@@ -1,0 +1,19 @@
+<div class="accordion-item">
+    <h2 class="accordion-header" id="headingExport">
+        <button class="outer accordion-button collapsed fs-6" type="button" data-bs-toggle="collapse"
+            data-bs-target="#collapseExport" aria-expanded="false" aria-controls="collapseExport">
+            <i class="bi bi-share me-2 fs-5"></i>Teilen
+            <i class="bi bi-info-circle info me-3 fs-5 " role="tooltip" data-bs-toggle="tooltip" data-bs-placement="right" title="Hier kann der Editor mit den aktuellen Style-Veränderungen geteilt werden."></i>
+        </button>
+    </h2>
+    <div id="collapseExport" class="accordion-collapse collapse" aria-labelledby="headingExport"
+        data-bs-parent="#accordionSidebar">
+        <div class="accordion-body">
+            <div class="input-group">
+                <input type="text" readonly class="form-control" value="{{getShareURL()}}">
+                <button class="btn btn-primary" type="button" (click)="copyShareURL()"><i
+                        class="bi bi-clipboard me-2"></i>Kopieren</button>
+            </div>
+        </div>
+    </div>
+</div>

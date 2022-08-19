@@ -1,0 +1,19 @@
+body {
+    height: 100vh;
+    max-height: -webkit-fill-available;
+    min-height: -webkit-fill-available;
+    overflow: hidden;
+}
+html {
+    height: -webkit-fill-available;
+}
+.btn {
+    padding: .375rem 1.25rem !important;
+}
+
+.info {
+  display: block;
+  float:right;
+  margin-left: auto;
+  color: var(--bs-secondary) ;
+}

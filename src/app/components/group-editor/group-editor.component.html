@@ -1,0 +1,112 @@
+<div *ngFor="let group of this.mapService.layerGroups" class="accordion-item">
+  <div class="accordion-header ms-1" id="{{'heading' + group.uuid}}">
+    <div class="d-flex">
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" [checked]="group.visible" (click)="toggleGroup(group)">
+      </div>
+      <button class="accordion-button collapsed py-0 ps-0" type="button" data-bs-toggle="collapse"
+        attr.data-bs-target="{{'#collapse' + group.uuid}}" aria-expanded="false"
+        attr.aria-controls="{{'collapse' + group.uuid}}">
+        <label class="form-check-label">{{group.name}}
+        </label>
+      </button>
+    </div>
+    <div id="{{'collapse' + group.uuid}}" class="accordion-collapse collapse"
+      attr.aria-labelledby="{{'heading' + group.uuid}}" data-bs-parent="#accordionLayerGroups">
+      <div class="accordion-body" style="padding-right: 2.5rem;">
+        <div *ngIf="group.subgroups.length > 0">
+          <div *ngFor="let subgroup of group.subgroups; let j = index" class="accordion"
+            id="{{'accordion' + subgroup.uuid}}">
+            <div class="accordion-header ms-1" id="{{'heading' + subgroup.uuid}}">
+              <div class="d-flex">
+                <div class="form-check form-switch">
+                  <input class="form-check-input" [checked]="subgroup.visible" type="checkbox"
+                    (click)="toggleSubgroup(group, subgroup)">
+                </div>
+                <button class="accordion-button collapsed py-0 ps-0" type="button" data-bs-toggle="collapse"
+                  attr.data-bs-target="{{'#collapse' + subgroup.uuid}}" aria-expanded="false"
+                  attr.aria-controls="{{'collapse' + subgroup.uuid}}">
+                  <label class="form-check-label pe-2" style="overflow-wrap: anywhere;">
+                    {{subgroup.name}}
+                  </label>
+                </button>
+              </div>
+            </div>
+            <div id="{{'collapse' + subgroup.uuid}}" class="accordion-collapse collapse"
+              attr.aria-labelledby="{{'heading' + subgroup.uuid}}"
+              attr.data-bs-parent="{{'#accordion' + subgroup.uuid}}">
+              <div class="accordion-body" style="padding-right: 2.5rem; padding-left: 2.75rem;">
+
+                <div class="py-2" *ngIf="hasFillLayers(subgroup)">
+                  <h6>Füllung</h6>
+                  <div class="d-flex align-items-center pb-1">
+                    <label class="form-check-label pe-3">Farbe</label>
+                    <input type="color" class="form-control form-control-color" [value]="subgroup.fillColor"
+                      (input)="changeSubgroupColor(subgroup, $event, 'fill')">
+                  </div>
+
+                  <div class="d-flex align-items-center justify-content-between pb-1">
+                    <label class="form-check-label">Transparenz</label>
+                    <input type="range" class="form-range px-3" min="0" max="1" step="0.1"
+                      [value]="subgroup.fillOpacity" (input)="changeSubGroupOpacity(subgroup, $event, 'fill')">
+                    <div style="width: 3rem;">{{subgroup.fillOpacity}}</div>
+                  </div>
+                  <div class="d-flex align-items-center" *ngIf="subgroup.has3D">
+                    <label class="form-check-label pe-3">3D-Effekt ausschalten</label>
+                    <input (input)="changeSubgroup3D(subgroup)" type="checkbox" class="form-check-input"
+                      [checked]="subgroup.threeDimOff">
+                  </div>
+                </div>
+
+                <div class="py-2" *ngIf="hasLineLayers(subgroup)">
+                  <h6>Kontur</h6>
+                  <div class="d-flex align-items-center pb-1">
+                    <label class="form-check-label pe-3">Farbe</label>
+                    <input type="color" class="form-control form-control-color" [value]="subgroup.lineColor"
+                      (input)="changeSubgroupColor(subgroup, $event, 'line')">
+                  </div>
+
+                  <div class="d-flex align-items-center justify-content-between">
+                    <label class="form-check-label">Transparenz</label>
+                    <input type="range" class="form-range px-3" min="0" max="1" step="0.1"
+                      [value]="subgroup.lineOpacity" (input)="changeSubGroupOpacity(subgroup, $event, 'line')">
+                    <div style="width: 3rem;">{{subgroup.lineOpacity}}</div>
+                  </div>
+                </div>
+                <div class="py-2" *ngIf="hasTextLayers(subgroup)">
+                  <h6>Beschriftung</h6>
+                  <div class="d-flex align-items-center pb-1">
+                    <label class="form-check-label pe-3">Farbe</label>
+                    <input type="color" class="form-control form-control-color" [value]="subgroup.symbolColor"
+                      (input)="changeSubgroupColor(subgroup, $event, 'symbol')">
+                  </div>
+                  <div class="d-flex align-items-center justify-content-between">
+                    <label class="form-check-label">Transparenz</label>
+                    <input type="range" class="form-range px-3" min="0" max="1" step="0.1"
+                      [value]="subgroup.symbolOpacity" (input)="changeSubGroupOpacity(subgroup, $event, 'symbol')">
+                    <div style="width: 3rem;">{{subgroup.symbolOpacity}}</div>
+                  </div>
+                </div>
+                <div class="py-2" *ngIf="hasCircleLayers(subgroup)">
+                  <h6>Punkt</h6>
+                  <div class="d-flex align-items-center pb-1">
+                    <label class="form-check-label pe-3">Farbe</label>
+                    <input type="color" class="form-control form-control-color" [value]="subgroup.circleColor"
+                      (input)="changeSubgroupColor(subgroup, $event, 'circle')">
+                  </div>
+
+                  <div class="d-flex align-items-center justify-content-between">
+                    <label class="form-check-label">Transparenz</label>
+                    <input type="range" class="form-range px-3" min="0" max="1" step="0.1"
+                      [value]="subgroup.circleOpacity" (input)="changeSubGroupOpacity(subgroup, $event, 'circle')">
+                    <div style="width: 3rem;">{{subgroup.circleOpacity}}</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

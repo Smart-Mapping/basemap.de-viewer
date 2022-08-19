@@ -1,0 +1,35 @@
+
+ .text-left {
+  display: inline-block;
+ }
+.text-right {
+  text-align: right;
+  display: inline-block;
+}
+
+
+.footer {
+  bottom: 0;
+  // height: 82px;
+  width: 500px;
+  position: absolute;
+  overflow: auto;
+  box-sizing: border-box;
+  z-index: 3;
+}
+
+#logo2 {
+  text-align: right;
+}
+
+@media only screen and (max-width: 768px) {
+  .footer {
+    bottom: 0;
+    position: relative;
+    width: 100%;
+
+  }
+  img {
+    height: 40px;
+  }
+}

@@ -1,0 +1,30 @@
+name: Deploy to adv production environment
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+
+jobs:
+  deploy:
+    name: Deploy viewer
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup node
+        uses: actions/setup-node@v3
+      - name: Install
+        run: npm ci
+      - name: Run unit tests
+        run: npm run test -- --watch=false --browsers=ChromeHeadless
+      - name: Build
+        run: npm run build-adv-prod
+      - name: Upload files
+        uses: garygrossgarten/github-action-scp@release
+        with:
+          local: ./dist/basemap-viewer
+          remote: ${{ secrets.ADV_PROD_PATH }}
+          host: ${{ secrets.ADV_PROD_HOST }}
+          username: ${{ secrets.ADV_PROD_USER }}
+          password: ${{ secrets.ADV_PROD_PASS }}

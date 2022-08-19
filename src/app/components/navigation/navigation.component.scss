@@ -1,0 +1,58 @@
+.nav {
+    height: 60px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-bottom: 2px solid rgb(0 0 0 / 10%);
+    position: absolute;
+    width: 100vw;
+    z-index: 4;
+    background: white;
+}
+
+.navbar-item-container {
+    display: flex;
+    width: 40px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.bi-info-circle {
+    font-size: 24px !important;
+    color: #333333;
+}
+
+.hamburger {
+    width: 40px;
+}
+
+.hamburger .line {
+    width: 30px;
+    height: 2px;
+    background-color: #333333;
+    display: block;
+    margin: 6px auto;
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+
+    border-radius: 3px;
+}
+
+.hamburger.is-active .line:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.is-active .line:nth-child(1) {
+    -webkit-transform: translateY(8px) rotate(45deg);
+    -ms-transform: translateY(8px) rotate(45deg);
+    -o-transform: translateY(8px) rotate(45deg);
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.is-active .line:nth-child(3) {
+    -webkit-transform: translateY(-8px) rotate(-45deg);
+    -ms-transform: translateY(-8px) rotate(-45deg);
+    -o-transform: translateY(-8px) rotate(-45deg);
+    transform: translateY(-8px) rotate(-45deg);
+}

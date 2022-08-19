@@ -1,0 +1,108 @@
+.selector {
+    box-shadow: 0 0 0 500vh rgb(128 128 128 / 80%);
+    aspect-ratio: 1 / 1.3;
+    background: transparent;
+    z-index: -1;
+    width: 70vh;
+}
+.selector.horizontal {
+    width: 80vh;
+    aspect-ratio: 1.75 / 1;
+}
+.menu {
+    width: 500px;
+    border-right: 2px solid rgb(0 0 0 / 10%);
+    height: 100%;
+    overflow: auto;
+    background-color: white;
+    pointer-events: all;
+    z-index: 3;
+}
+.menu-footer {
+  width: 500px;
+  position: absolute;
+  top:0px;
+  bottom: 82px;
+  pointer-events: all;
+  z-index: 3;
+  overflow: auto;
+}
+
+
+@media only screen and (max-width: 768px) {
+  .menu-footer {
+  position: relative;
+  width: 100%;
+}
+}
+.menu-wrapper {
+    display: flex;
+    transition: all 0.5s;
+    position: absolute;
+    left: -500px;
+    top: 60px;
+    height: calc(100% - 60px);
+    width: 100%;
+    z-index: 3;
+    pointer-events: none;
+}
+.menu-wrapper.expanded {
+    left: 0;
+}
+.print-overlay {
+    width: calc(100% - 500px);
+    pointer-events: none;
+}
+.accordion {
+    color: #333333;
+}
+@media (max-width: 768px) {
+    .menu {
+        width: 100%;
+        border-bottom: 2px solid rgb(0 0 0 / 10%);
+        border-right: 0;
+        height: calc(40% - 60px);
+        border-left: 0;
+    }
+    .menu-wrapper {
+        display: block;
+        left: 0;
+        height: 0;
+        top: -2px;
+    }
+    .print-overlay {
+        width: 100%;
+        height: 60%;
+    }
+    .selector {
+        width: calc(70vh * 0.5);
+    }
+    .selector.horizontal {
+        width: calc(80vh * 0.5);
+    }
+    .menu-wrapper.expanded {
+        height: 100%;
+        top: 60px
+    }
+}
+
+.layer-container {
+    max-height: 40vh;
+    overflow-y: auto;
+}
+
+.form-control-color {
+    border: none;
+    padding: 0;
+}
+
+.number-control {
+    width: 2.65rem;
+    margin: .375rem;
+    margin-left: 0;
+    height: 1.65rem;
+    padding: 0;
+    text-align: center;
+}
+
+@import "~/src/accordionfix.scss"

@@ -1,0 +1,106 @@
+#map {
+    width: 100%;
+    height: calc(100% - 60px);
+    z-index: 1;
+    top: 60px;
+    background: white;
+}
+
+.maplibregl-popup,
+.maplibregl-popup-close-button,
+.search-control-wrapper {
+    font-family: var(--bs-body-font-family) !important;
+    font-size: var(--bs-body-font-size) !important;
+    font-weight: var(--bs-body-font-weight) !important;
+    line-height: var(--bs-body-line-height) !important;
+}
+.maplibregl-ctrl-top-left {
+    display: flex;
+    flex-flow: column;
+}
+.maplibregl-popup {
+    max-width: 400px !important;
+}
+
+.maplibregl-popup-close-button {
+    font-size: 1.5rem !important;
+    padding-right: 6px;
+    color: #333333;
+    top: -4px
+}
+
+.search-control {
+    width: 40px;
+    height: 40px;
+    transition: width 0.5s;
+}
+
+.search-control.expanded {
+    width: 300px;
+}
+
+.search-control button:focus:first-child {
+    border-radius: 4px !important;
+}
+
+.search-control button {
+    border-radius: 4px !important;
+}
+
+.search-control>input {
+    outline: none;
+    width: 0px;
+    height: 32px;
+    border-radius: 4px;
+    transition: all 0.5s;
+    padding-left: 0rem;
+    padding-right: 0rem;
+}
+
+.search-control.expanded>input {
+    width: 260px;
+    transition: all 0.5s;
+    border-radius: 4px;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+.maplibregl-popup-content {
+    padding: 1rem !important;
+    border: 2px solid rgba(0, 0, 0, 0.1) !important;
+    border-radius: 4px;
+    box-shadow: none;
+    max-height: 50vh;
+    overflow: auto;
+}
+
+.maplibregl-ctrl-bottom-left,
+.maplibregl-ctrl-top-left,
+.maplibregl-ctrl-top-right {
+    transition: padding 0.5s
+}
+
+.result {
+    box-shadow: 0 0 0 1px rgb(0 0 0 / 10%);
+    padding-left: 0.7rem !important;
+    padding-right: 0.7rem !important;
+    pointer-events: all;
+    cursor: pointer;
+}
+
+.results-area.expanded {
+    box-shadow: 0 0 0 2px rgb(0 0 0 / 10%);
+    border-radius: 4px;
+    margin-top: 10px;
+    margin-right: 10px;
+    display: block;
+    max-height: calc(100% - 100px);
+    background: white;
+    overflow-y: auto;
+    width: 300px;
+}
+
+.maplibregl-ctrl-group button {
+    height: 40px !important;
+    width: 40px !important;
+}

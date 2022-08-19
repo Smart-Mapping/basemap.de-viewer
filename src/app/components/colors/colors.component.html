@@ -1,0 +1,31 @@
+<div class="accordion-item">
+    <h2 class="accordion-header" id="headingColors">
+        <button class="accordion-button collapsed fs-6" type="button" data-bs-toggle="collapse"
+            data-bs-target="#collapseColors" aria-expanded="false" aria-controls="collapseColors">
+            <i class="bi bi-palette me-2 fs-5"></i>Farben
+        </button>
+    </h2>
+    <div id="collapseColors" class="accordion-collapse collapse" aria-labelledby="headingColors"
+        data-bs-parent="#accordionSidebar">
+        <div class="accordion-body">
+            <div class="w-100 d-flex color-container">
+                <div class="w-50 me-2">
+                  <div>Helligkeit</div>
+                  <div class="input-group mt-1">
+                    <button class="btn btn-primary" type="button" (click)="this.mapService.changeHSL(0, -10)">-</button>
+                    <input readonly type="number" class="form-control text-center" value="{{this.mapService.brightness}}">
+                    <button class="btn btn-primary" type="button" (click)="this.mapService.changeHSL(0, 10)">+</button>
+                  </div>
+                </div>
+                <div class="w-50 ms-2">
+                  <div>Sättigung</div>
+                  <div class="input-group mt-1">
+                    <button class="btn btn-primary" type="button" (click)="this.mapService.changeHSL(-10, 0)">-</button>
+                    <input readonly type="number" class="form-control text-center" value="{{this.mapService.saturation}}">
+                    <button class="btn btn-primary" type="button" (click)="this.mapService.changeHSL(10, 0)">+</button>
+                  </div>
+                </div>
+              </div>
+        </div>
+    </div>
+</div>
