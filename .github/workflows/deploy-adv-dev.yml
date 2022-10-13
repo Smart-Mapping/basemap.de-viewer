@@ -22,7 +22,7 @@ jobs:
       - name: Setup node
         uses: actions/setup-node@v3
       - name: Install
-        run: npm ci
+        run: npm install
       - name: Audit packages
         run: npm audit
       - name: Run unit tests
