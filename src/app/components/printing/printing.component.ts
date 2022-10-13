@@ -56,7 +56,7 @@ export class PrintingComponent implements OnInit, AfterViewInit {
   constructor(private mapService: MapService) { }
 
   /**
-   * Gets reference to selector and sets heading text depending on environment 
+   * Gets reference to selector and sets heading text depending on environment
    */
   ngAfterViewInit(): void {
     this.selector = document.querySelector('.selector')!
@@ -65,7 +65,7 @@ export class PrintingComponent implements OnInit, AfterViewInit {
 
   /**
    * Sets available print formats and dpis depending on environment
-   * Sets event listener to update the map on showing or hiding component 
+   * Sets event listener to update the map on showing or hiding component
    */
   ngOnInit(): void {
     environment.printFormats.forEach((pf: any) => this.printFormats.push(new PrintFormat(pf.name, pf.value, pf.width, pf.height)))
@@ -74,7 +74,7 @@ export class PrintingComponent implements OnInit, AfterViewInit {
     this.dpi = this.dpis[0]
 
     const printArea = document.querySelector('#collapsePrint')
-    printArea!.addEventListener("show.bs.collapse", () => {
+    printArea!.addEventListener("show.bs.collapse", (e) => {
       this.mapService.setupPrintMode(true)
       this.mapService.map?.easeTo({ pitch: 0, bearing: 0 })
       this.mapService.map?.on('move', this.calcScale);
@@ -173,7 +173,6 @@ export class PrintingComponent implements OnInit, AfterViewInit {
             })
           } catch (e) {
             console.log(e)
-            this.showDPIAlert()
           } finally {
             resetPrintMap()
             enableBtn()
@@ -191,7 +190,6 @@ export class PrintingComponent implements OnInit, AfterViewInit {
             doc.save(name + ".pdf")
           } catch (e) {
             console.log(e)
-            this.showDPIAlert()
           } finally {
             resetPrintMap()
             enableBtn()
@@ -329,10 +327,4 @@ export class PrintingComponent implements OnInit, AfterViewInit {
     this.scale = parseInt((geoDistance / printDistance).toFixed(0))
   }
 
-  /**
-   * Shows user an alert that the selected dpi is to high
-   */
-  showDPIAlert() {
-    alert("Die gewählte DPI ist zu hoch. Versuchen Sie es mit einem geringeren Wert oder ändern Sie die Größe.")
-  }
 }
