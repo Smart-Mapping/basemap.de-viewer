@@ -1,5 +1,13 @@
 {
     "horusecCliFilesOrPathsToIgnore": [
         "**/Dockerfile"
+    ],
+    "horusecCliFalsePositiveHashes": [
+      "b23a71479ee3ee3247107348ea617914bcd264ba739e50b2440574f3925bc4cb",
+      "d5874d0324fc5f3cdf2987a2353f769db5cba926799defcfb663a13d1e9b52a1",
+      "6753ca1007e1dcbbff94f436d190db2aa75043223ab992d48241b2a69c2a063f",
+      "38098d6255db79a1694a1fa0fa2c8068f748798d4788ec694c16c394e90cb4a2",
+      "4e9ea8c2313f9576a8c5b496218ea9d5c835f03943a3992e01dce1801268ec4f"
+
     ]
 }
