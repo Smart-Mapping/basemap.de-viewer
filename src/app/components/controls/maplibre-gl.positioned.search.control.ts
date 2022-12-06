@@ -10,12 +10,19 @@ export default class PositionedSearchControl implements IControl {
   container?: HTMLElement
   /** List of all search requests */
   requests: number[] = []
+  /** Session key for GeoCoder access */
+  sessionKey: string
 
   /**
    * Creates instance of PositionedSearchControl with order
    * @param order Position of control in container
    */
-  constructor(private order?: number) { }
+  constructor(private order?: number) {
+    this.sessionKey = '';
+    fetch('https://sg.geodatenzentrum.de/gdz_getSession?bkg_appid=' + environment.bkgAppId + '&domain=' + window.location.hostname)
+      .then(res => res.text())
+      .then(session => this.sessionKey = session);
+  }
 
   /**
    * Creates html element for control
@@ -65,14 +72,14 @@ export default class PositionedSearchControl implements IControl {
       if (term.length > 2) {
         let start = Date.now()
         this.requests.push(start)
-        fetch(environment.searchURL + 'suggest?term=' + term)
+        fetch('https://sg.geodatenzentrum.de/gdz_geokodierung__' + this.sessionKey + '/suggest?query=' + term + '&outputformat=json&count=5')
           .then(res => res.json())
           .then(out => {
             if (this.requests[this.requests.length - 1] === start && topArea.classList.contains("expanded")) {
               this.requests = []
               resultsArea.innerHTML = ''
               resultsArea.classList.add("expanded")
-              out.suggestions.forEach((element: any) => {
+              out.forEach((element: any) => {
                 const suggestion = document.createElement('div')
                 suggestion.className = 'result p-2'
                 const main = document.createElement('div')
@@ -87,7 +94,7 @@ export default class PositionedSearchControl implements IControl {
                   main.textContent = element.suggestion;
                 }
                 suggestion.addEventListener('click', () => {
-                  fetch(environment.searchURL + 'search?term=' + element.suggestion)
+                  fetch('https://sg.geodatenzentrum.de/gdz_geokodierung__' + this.sessionKey + '/geosearch?query=' + term + '&outputformat=json')
                     .then(res => res.json())
                     .then(result => {
                       resultsArea.innerHTML = ''

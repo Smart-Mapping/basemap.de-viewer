@@ -12,6 +12,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+      - name: Replacements
+        run: |
+          sed -i 's/bkgAppId: \'\'/bkgAppId: \'${{ secrets.BKG_APP_ID }}\'/g' ./src/environments/environments.prod.ts
       - name: Salus Scan
         id: salus_scan
         uses: federacy/scan-action@0.1.4
