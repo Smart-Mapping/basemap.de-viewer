@@ -1,7 +1,7 @@
 export let environment = {
   production: true,
   name: 'basemap.de',
-  searchURL: 'https://adv-smart.de/map-service/',
+  bkgAppId: '',
   logo: 'assets/basemap-logo-text.svg',
   logo_small: 'assets/basemap-logo-text.svg',
   logoHeight: 35,
