@@ -147,6 +147,15 @@ export let environment = {
       topPlusBgBehind: 'Hintergrund',
       useMetaData: false,
       isBeta: true
+    },
+    {
+      name: 'Schummerung',
+      imgUrl: 'assets/basemap_hillshade_raster.png',
+      styling: 'https://dev.adv-smart.de/styles/playground/viewer/bm_viewer_schummerung.json',
+      topPlusBg: true,
+      topPlusBgBehind: 'ColorDEM',
+      useMetaData: false,
+      isBeta: true
     }
   ],
   imprint: `
