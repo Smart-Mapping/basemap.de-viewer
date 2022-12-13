@@ -94,7 +94,7 @@ export default class PositionedSearchControl implements IControl {
                   main.textContent = element.suggestion;
                 }
                 suggestion.addEventListener('click', () => {
-                  fetch('https://sg.geodatenzentrum.de/gdz_geokodierung__' + this.sessionKey + '/geosearch?query=' + term + '&outputformat=json')
+                  fetch('https://sg.geodatenzentrum.de/gdz_geokodierung__' + this.sessionKey + '/geosearch?query=' + element.suggestion + '&outputformat=json')
                     .then(res => res.json())
                     .then(result => {
                       resultsArea.innerHTML = ''
