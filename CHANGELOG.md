@@ -1,3 +1,10 @@
+## v1.1.1 (2023-01-12)
+
+### Bug Fixes
+
+* Use correct variable for geocoder query parameter
+* Remove non-functioning beta styles "Nacht" and "Druck" from style overview
+
 ## v1.1.0 (2022-12-06)
 
 ### Features
