@@ -121,23 +121,6 @@ export let environment = {
       topPlusBgBehind: 'Hintergrund',
       useMetaData: false,
       isBeta: false
-    },
-    {
-      name: 'Nacht',
-      imgUrl: 'assets/basemap_night.png',
-      styling: 'https://adv-smart.de/styles/public/de_style_night.json',
-      topPlusBg: false,
-      useMetaData: false,
-      isBeta: true
-    },
-    {
-      name: 'Druck',
-      imgUrl: 'assets/basemap_print.png',
-      styling: 'https://adv-smart.de/styles/public/de_style_print.json',
-      topPlusBg: true,
-      topPlusBgBehind: 'Hintergrund',
-      useMetaData: false,
-      isBeta: true
     }
   ],
   imprint: `
