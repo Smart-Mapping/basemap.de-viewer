@@ -86,6 +86,10 @@ export class PrintingComponent implements OnInit, AfterViewInit {
         this.toggleScaleLocked()
       }
     })
+
+    // In some browsers the scale number is not set in input field.
+    // Therefore calculate scale here.
+    this.calcScale();
   }
 
   /**
