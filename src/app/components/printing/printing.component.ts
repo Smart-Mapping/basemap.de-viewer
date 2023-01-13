@@ -78,6 +78,9 @@ export class PrintingComponent implements OnInit, AfterViewInit {
       this.mapService.setupPrintMode(true)
       this.mapService.map?.easeTo({ pitch: 0, bearing: 0 })
       this.mapService.map?.on('move', this.calcScale);
+      // In some browsers, the scale number in the input field is not set when the print area is expanded.
+      // Therefore calculate scale here.
+      this.calcScale();
     })
     printArea!.addEventListener("hide.bs.collapse", () => {
       this.mapService.setupPrintMode(false)
@@ -86,10 +89,6 @@ export class PrintingComponent implements OnInit, AfterViewInit {
         this.toggleScaleLocked()
       }
     })
-
-    // In some browsers the scale number is not set in input field.
-    // Therefore calculate scale here.
-    this.calcScale();
   }
 
   /**
