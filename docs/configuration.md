@@ -7,9 +7,9 @@ The basemap.de viewer can be customized in the [environment.ts](../src/environme
 
 Application name.
 
-`searchURL`: string
+`bkgAppId`: string
 
-URL to geocoder service for address search.
+App ID for BKG geocoder service.
 
 `logo`: string
 

@@ -28,7 +28,7 @@
     "file-saver": "^2.0.5",
     "html2canvas": "^1.4.1",
     "jspdf": "^2.5.1",
-    "maplibre-gl": "^2.3.0",
+    "maplibre-gl": "^2.4.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "uuid": "^8.3.2",

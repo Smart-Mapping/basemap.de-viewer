@@ -125,7 +125,7 @@ export let environment = {
     {
       name: 'Nacht',
       imgUrl: 'assets/basemap_night.png',
-      styling: 'https://dev.adv-smart.de/styles/dev/de_style_night_dev.json',
+      styling: 'https://dev.adv-smart.de/styles/dev/bm_web_drk.json',
       topPlusBg: false,
       useMetaData: false,
       isBeta: true
