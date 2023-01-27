@@ -131,6 +131,14 @@ export let environment = {
       isBeta: true
     },
     {
+      name: 'S/W',
+      imgUrl: 'assets/basemap_bw.png',
+      styling: 'https://dev.adv-smart.de/styles/dev/bm_web_bin.json',
+      topPlusBg: false,
+      useMetaData: false,
+      isBeta: true
+    },
+    {
       name: 'Druck',
       imgUrl: 'assets/basemap_print.png',
       styling: 'https://dev.adv-smart.de/styles/dev/bm_print_col.json',
