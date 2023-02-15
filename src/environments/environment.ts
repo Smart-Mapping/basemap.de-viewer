@@ -155,6 +155,15 @@ export let environment = {
       topPlusBgBehind: 'Hintergrund',
       useMetaData: false,
       isBeta: true
+    },
+    {
+      name: 'P50',
+      imgUrl: 'assets/basemap_print.png',
+      styling: 'https://dev.adv-smart.de/styles/dev/bm_print_col_P50_BW.json',
+      topPlusBg: true,
+      topPlusBgBehind: 'Hintergrund',
+      useMetaData: false,
+      isBeta: true
     }
   ],
   imprint: `
