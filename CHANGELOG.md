@@ -1,3 +1,9 @@
+## v1.2.0 (2023-02-20)
+
+### Features
+
+* Add new styles "Nacht" and "Binär" to style overview.
+
 ## v1.1.2 (2023-01-13)
 
 ### Bug fixes
