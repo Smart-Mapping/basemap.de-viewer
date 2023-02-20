@@ -129,7 +129,7 @@ export let environment = {
       topPlusBg: true,
       topPlusBgBehind: 'Hintergrund',
       useMetaData: false,
-      isBeta: false
+      isBeta: true
     },
     {
       name: 'Binär',
@@ -138,7 +138,7 @@ export let environment = {
       topPlusBg: true,
       topPlusBgBehind: 'Hintergrund',
       useMetaData: false,
-      isBeta: false
+      isBeta: true
     }
   ],
   imprint: `
