@@ -126,15 +126,17 @@ export let environment = {
       name: 'Nacht',
       imgUrl: 'assets/basemap_night.png',
       styling: 'https://dev.adv-smart.de/styles/dev/bm_web_drk.json',
-      topPlusBg: false,
+      topPlusBg: true,
+      topPlusBgBehind: 'Hintergrund',
       useMetaData: false,
       isBeta: true
     },
     {
-      name: 'S/W',
+      name: 'Binär',
       imgUrl: 'assets/basemap_bw.png',
       styling: 'https://dev.adv-smart.de/styles/dev/bm_web_bin.json',
-      topPlusBg: false,
+      topPlusBg: true,
+      topPlusBgBehind: 'Hintergrund',
       useMetaData: false,
       isBeta: true
     },

@@ -121,6 +121,24 @@ export let environment = {
       topPlusBgBehind: 'Hintergrund',
       useMetaData: false,
       isBeta: false
+    },
+    {
+      name: 'Nacht',
+      imgUrl: 'assets/basemap_night.png',
+      styling: 'https://basemap.de/data/produkte/web_vektor/styles/bm_web_drk.json',
+      topPlusBg: true,
+      topPlusBgBehind: 'Hintergrund',
+      useMetaData: false,
+      isBeta: false
+    },
+    {
+      name: 'Binär',
+      imgUrl: 'assets/basemap_bw.png',
+      styling: 'https://basemap.de/data/produkte/web_vektor/styles/bm_web_bin.json',
+      topPlusBg: true,
+      topPlusBgBehind: 'Hintergrund',
+      useMetaData: false,
+      isBeta: false
     }
   ],
   imprint: `
