@@ -700,7 +700,7 @@ export class MapService {
         type: 'raster',
         tiles: [environment.topPlusURL],
         tileSize: 256,
-        attribution: "Hintergrund: TopPlusOpen"
+        attribution: "Außerhalb Deutschlands: TopPlusOpen"
       })
       this.map?.addLayer({
         id: 'TopPlusOpen',

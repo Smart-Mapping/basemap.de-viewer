@@ -1,3 +1,9 @@
+## v1.3.0 (2023-02-20)
+
+### Features
+
+* Add configuration for attribution in print file
+
 ## v1.2.0 (2023-02-20)
 
 ### Features
