@@ -1,3 +1,9 @@
+## v1.3.1 (2023-03-21)
+
+### Bug Fixes
+
+* Update dependencies for security fixes
+
 ## v1.3.0 (2023-02-20)
 
 ### Features
