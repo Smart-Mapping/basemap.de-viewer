@@ -210,7 +210,7 @@ export class MapService {
         let entry = this.layerGroups.find(e => e.name === sourceLayer)
         let newLayer = new Layer(layer.id, id, true, layer)
         if (!entry) {
-          this.layerGroups.push(new LayerGroup(sourceLayer, [newLayer], true))
+          this.layerGroups.push(new LayerGroup(sourceLayer, [newLayer], false))
         } else {
           entry.layers.push(newLayer)
         }
@@ -222,6 +222,18 @@ export class MapService {
         newLayer.opacity = layerPaint && parseFloat(layerPaint[opacityProperty]) ? parseFloat(layerPaint[opacityProperty]) : 1
         newLayer.has3D = newLayer.maplibreLayer.type === 'fill-extrusion'
         newLayer.threeDimOff = (newLayer.has3D && layerPaint['fill-extrusion-height'] === 0)
+
+        // Read layer visibility from style and set visibility for layers and groups
+        if (layer.hasOwnProperty('layout') && layer.layout?.visibility === 'none') {
+          newLayer.visible = false
+        } else {
+          newLayer.visible = true
+          let entry = this.layerGroups.find(e => e.name === sourceLayer)
+          if (entry) {
+            entry.visible = true
+          }
+        }
+        newLayer.visible = (layer.hasOwnProperty('layout') && layer.layout?.visibility === 'none') ? false : true
       })
       this.layerGroups.sort((a, b) => a.name.localeCompare(b.name))
     }

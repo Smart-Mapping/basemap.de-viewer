@@ -1,3 +1,9 @@
+## v1.3.2 (2023-04-19)
+
+### Bug Fixes
+
+* Disable layers and groups in the layer tree when the visibility of the style layer is "none".
+
 ## v1.3.1 (2023-03-21)
 
 ### Bug Fixes
