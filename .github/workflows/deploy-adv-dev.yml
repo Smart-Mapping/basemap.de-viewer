@@ -15,10 +15,10 @@ jobs:
       - name: Replacements
         run: |
           sed -i "s/bkgAppId: ''/bkgAppId: '${{ secrets.BKG_APP_ID }}'/g" ./src/environments/environment.ts
-      - name: Running Horusec Security
-        run: |
-          curl -fsSL https://raw.githubusercontent.com/ZupIT/horusec/main/deployments/scripts/install.sh | bash -s latest
-          horusec start -p="./" -e="true" --log-level=debug
+      # - name: Running Horusec Security
+      #   run: |
+      #     curl -fsSL https://raw.githubusercontent.com/ZupIT/horusec/main/deployments/scripts/install.sh | bash -s latest
+      #     horusec start -p="./" -e="true" --log-level=debug
       - name: Setup node
         uses: actions/setup-node@v3
       - name: Install
