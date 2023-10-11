@@ -142,7 +142,7 @@ export let environment = {
       isBeta: true
     },
     {
-      name: 'Druck',
+      name: 'P10',
       imgUrl: 'assets/basemap_print.png',
       styling: 'https://dev.adv-smart.de/styles/dev/bm_print_col.json',
       topPlusBg: true,
@@ -151,16 +151,7 @@ export let environment = {
       isBeta: true
     },
     {
-      name: 'Druck Grau',
-      imgUrl: 'assets/basemap_print_gry.png',
-      styling: 'https://dev.adv-smart.de/styles/dev/bm_print_gry.json',
-      topPlusBg: true,
-      topPlusBgBehind: 'Hintergrund_FF',
-      useMetaData: false,
-      isBeta: true
-    },    
-    {
-      name: 'Druck 2',
+      name: 'P10 (2)',
       imgUrl: 'assets/basemap_print.png',
       styling: 'https://dev.adv-smart.de/styles/dev/bm_print_col_top.json',
       topPlusBg: true,
@@ -168,6 +159,15 @@ export let environment = {
       useMetaData: false,
       isBeta: true
     },
+    {
+      name: 'P10 Grau',
+      imgUrl: 'assets/basemap_print_gry.png',
+      styling: 'https://dev.adv-smart.de/styles/dev/bm_print_gry.json',
+      topPlusBg: true,
+      topPlusBgBehind: 'Hintergrund_FF',
+      useMetaData: false,
+      isBeta: true
+    },    
     {
       name: 'P50',
       imgUrl: 'assets/basemap_print.png',
