@@ -24,7 +24,7 @@ jobs:
       - name: Install
         run: npm install
       - name: Audit packages
-        run: npm audit
+        run: npm audit --audit-level=high
       - name: Run unit tests
         run: npm run test -- --watch=false --browsers=ChromeHeadless
       - name: Build
