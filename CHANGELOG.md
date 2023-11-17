@@ -1,3 +1,9 @@
+## v1.3.3 (2023-11-17)
+
+### Bug Fixes
+
+* Update Angular to v17
+
 ## v1.3.2 (2023-04-19)
 
 ### Bug Fixes

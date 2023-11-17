@@ -98,13 +98,13 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "adv-prod": {
-              "browserTarget": "basemap-viewer:build:adv-prod"
+              "buildTarget": "basemap-viewer:build:adv-prod"
             },
             "adv-dev": {
-              "browserTarget": "basemap-viewer:build:adv-dev"
+              "buildTarget": "basemap-viewer:build:adv-dev"
             },
             "adv-local": {
-              "browserTarget": "basemap-viewer:build:adv-local"
+              "buildTarget": "basemap-viewer:build:adv-local"
             }
           },
           "defaultConfiguration": "adv-local"
@@ -112,7 +112,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "basemap-viewer:build"
+            "buildTarget": "basemap-viewer:build"
           }
         },
         "test": {
