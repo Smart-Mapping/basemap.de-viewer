@@ -1,4 +1,4 @@
-import { Map, NavigationControl, NavigationOptions } from "maplibre-gl";
+import { Map, NavigationControl, NavigationControlOptions } from "maplibre-gl";
 
 /**
  * Custom navigation control element
@@ -10,7 +10,7 @@ export default class PositionedNavigationControl extends NavigationControl {
    * @param options Options for default NavigationControl
    * @param order Position of control in container
    */
-  constructor(options: NavigationOptions, private order?: number) {
+  constructor(options: NavigationControlOptions, private order?: number) {
     super(options)
   }
 

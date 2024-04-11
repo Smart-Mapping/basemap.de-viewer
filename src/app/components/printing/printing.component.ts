@@ -148,7 +148,7 @@ export class PrintingComponent implements OnInit, AfterViewInit {
     extraBottom.style.height = padding + "mm"
     extraBottom.style.fontSize = "3mm"
     extraBottom.children.item(0)!.textContent = "Maßstab 1:" + (this.isScaleLocked ? this.lockedScale : this.scale)
-    extraBottom.children.item(1)!.textContent = environment.printAttribution + (this.mapService.activeBasemap?.topPlusBg ? " | Außerhalb Deutschlands: TopPlusOpen" : "")
+    extraBottom.children.item(1)!.textContent = environment.printAttribution + (this.mapService.activeBasemap?.topPlusBg ? " | Außerhalb Deutschlands: ©  OpenStreetMap  contributors, TopPlusOpen" : "")
     const printMap = new Map({
       container: renderContainer,
       style: this.mapService.map!.getStyle(),

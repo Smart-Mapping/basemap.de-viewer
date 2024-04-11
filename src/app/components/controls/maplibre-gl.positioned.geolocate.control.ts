@@ -1,4 +1,4 @@
-import { Map, GeolocateControl, GeolocateOptions } from 'maplibre-gl';
+import { Map, GeolocateControl, GeolocateControlOptions } from 'maplibre-gl';
 
 /**
  * Custom geolocate control element
@@ -10,7 +10,7 @@ export default class PositionedGeolocateControl extends GeolocateControl {
    * @param options Options for default GeolocateControl
    * @param order Position of control in container
    */
-  constructor(options: GeolocateOptions, private order?: number) {
+  constructor(options: GeolocateControlOptions, private order?: number) {
     super(options)
   }
 

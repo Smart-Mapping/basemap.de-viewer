@@ -1,3 +1,10 @@
+## v1.3.4 (2024-04-11)
+
+### Bug Fixes
+
+* Update attributions
+* Update dependencies
+
 ## v1.3.3 (2023-11-17)
 
 ### Bug Fixes

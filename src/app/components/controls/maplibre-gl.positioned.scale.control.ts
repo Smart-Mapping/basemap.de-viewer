@@ -1,4 +1,4 @@
-import { Map, ScaleControl, ScaleOptions } from 'maplibre-gl';
+import { Map, ScaleControl, ScaleControlOptions } from 'maplibre-gl';
 
 /**
  * Custom scale control element
@@ -9,7 +9,7 @@ export default class PositionedScaleControl extends ScaleControl {
    * Creates instance of PositionedScaleControl with order
    * @param order Position of control in container
    */
-  constructor(options: ScaleOptions, private order?: number) {
+  constructor(options: ScaleControlOptions, private order?: number) {
     super(options)
   }
 

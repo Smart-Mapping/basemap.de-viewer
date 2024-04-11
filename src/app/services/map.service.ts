@@ -712,7 +712,7 @@ export class MapService {
         type: 'raster',
         tiles: [environment.topPlusURL],
         tileSize: 256,
-        attribution: "Außerhalb Deutschlands: TopPlusOpen"
+        attribution: "Außerhalb Deutschlands: ©  <a href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\">OpenStreetMap  contributors</a>, <a href=\"https://sg.geodatenzentrum.de/web_public/gdz/datenquellen/Datenquellen_TopPlusOpen.pdf\" target=\"_blank\">TopPlusOpen</a>"
       })
       this.map?.addLayer({
         id: 'TopPlusOpen',
