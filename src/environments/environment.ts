@@ -176,6 +176,15 @@ export let environment = {
       topPlusBgBehind: 'Hintergrund_FF',
       useMetaData: false,
       isBeta: true
+    },    
+    {
+      name: 'Pxx',
+      imgUrl: 'assets/basemap_print.png',
+      styling: 'https://dev.adv-smart.de/styles/dev/bm_print_col_Pxx.json',
+      topPlusBg: true,
+      topPlusBgBehind: 'Hintergrund_FF',
+      useMetaData: false,
+      isBeta: true
     }
   ],
   imprint: `
