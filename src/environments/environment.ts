@@ -185,6 +185,15 @@ export let environment = {
       topPlusBgBehind: 'Hintergrund_FF',
       useMetaData: false,
       isBeta: true
+    },
+    {
+      name: 'World',
+      imgUrl: 'assets/basemap_colour.png',
+      styling: 'https://dev.adv-smart.de/styles/dev/bm_web_wld_col.json',
+      topPlusBg: false,
+      topPlusBgBehind: 'Hintergrund_FF',
+      useMetaData: false,
+      isBeta: true
     }
   ],
   imprint: `
