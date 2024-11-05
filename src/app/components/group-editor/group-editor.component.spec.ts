@@ -1,8 +1,9 @@
-import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { provideHttpClientTesting } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { LayerGroup, Layer } from 'src/app/entities/layergroup';
 import { MapService } from 'src/app/services/map.service';
 import { GroupEditorComponent } from './group-editor.component';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
 describe('GroupEditorComponent', () => {
   let component: GroupEditorComponent;
@@ -12,10 +13,10 @@ describe('GroupEditorComponent', () => {
   beforeEach(async () => {
     mapServiceMock = jasmine.createSpyObj('mapService', ['toggleGroup', 'changeSubgroup'])
     await TestBed.configureTestingModule({
-      declarations: [GroupEditorComponent],
-      providers: [{ provide: MapService, useValue: mapServiceMock }],
-      imports: [HttpClientTestingModule]
-    }).compileComponents();
+    declarations: [GroupEditorComponent],
+    imports: [],
+    providers: [{ provide: MapService, useValue: mapServiceMock }, provideHttpClient(withInterceptorsFromDi()), provideHttpClientTesting()]
+}).compileComponents();
   });
 
   beforeEach(() => {

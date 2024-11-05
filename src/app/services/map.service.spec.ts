@@ -1,11 +1,12 @@
 import { Control } from './../entities/control';
 import { environment } from 'src/environments/environment';
-import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { provideHttpClientTesting } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { Basemap } from '../entities/basemap';
 import { MapService } from './map.service';
 import { Layer, LayerGroup } from '../entities/layergroup';
 import { NavigationControl, BackgroundLayerSpecification } from 'maplibre-gl'
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
 
 describe('MapService', () => {
@@ -14,10 +15,10 @@ describe('MapService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [MapService],
-      imports: [HttpClientTestingModule],
-      teardown: { destroyAfterEach: false }
-    });
+    teardown: { destroyAfterEach: false },
+    imports: [],
+    providers: [MapService, provideHttpClient(withInterceptorsFromDi()), provideHttpClientTesting()]
+});
     service = TestBed.inject(MapService)
   });
 

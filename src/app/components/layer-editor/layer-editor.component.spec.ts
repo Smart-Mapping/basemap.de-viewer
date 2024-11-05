@@ -1,8 +1,9 @@
 import { Layer, LayerGroup } from 'src/app/entities/layergroup';
-import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { provideHttpClientTesting } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { MapService } from 'src/app/services/map.service';
 import { LayerEditorComponent } from './layer-editor.component';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
 describe('LayerEditorComponent', () => {
 
@@ -13,10 +14,10 @@ describe('LayerEditorComponent', () => {
   beforeEach(async () => {
     mapServiceMock = jasmine.createSpyObj('mapService', ['toggleGroup', 'toggleLayer', 'changeLayer'])
     await TestBed.configureTestingModule({
-      declarations: [LayerEditorComponent],
-      providers: [{ provide: MapService, useValue: mapServiceMock }],
-      imports: [HttpClientTestingModule]
-    }).compileComponents();
+    declarations: [LayerEditorComponent],
+    imports: [],
+    providers: [{ provide: MapService, useValue: mapServiceMock }, provideHttpClient(withInterceptorsFromDi()), provideHttpClientTesting()]
+}).compileComponents();
   });
 
   beforeEach(() => {

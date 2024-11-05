@@ -2,7 +2,8 @@ import { PrintFormat } from './../../entities/printformat';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { MapService } from 'src/app/services/map.service';
 import { PrintingComponent } from './printing.component';
-import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { provideHttpClientTesting } from '@angular/common/http/testing';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
 describe('PrintingComponent', () => {
 
@@ -11,10 +12,10 @@ describe('PrintingComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [PrintingComponent],
-      providers: [{ provide: MapService, useClass: MapService }],
-      imports: [HttpClientTestingModule]
-    }).compileComponents();
+    declarations: [PrintingComponent],
+    imports: [],
+    providers: [{ provide: MapService, useClass: MapService }, provideHttpClient(withInterceptorsFromDi()), provideHttpClientTesting()]
+}).compileComponents();
   });
 
   beforeEach(() => {

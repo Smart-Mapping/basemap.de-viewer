@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import * as saveAs from 'file-saver';
+import saveAs from 'file-saver';
 import { MapService } from 'src/app/services/map.service';
 
 /**

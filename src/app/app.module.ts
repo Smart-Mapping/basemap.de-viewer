@@ -13,33 +13,26 @@ import { ColorsComponent } from './components/colors/colors.component';
 import { DownloadComponent } from './components/download/download.component';
 import { GroupEditorComponent } from './components/group-editor/group-editor.component';
 import { LayerEditorComponent } from './components/layer-editor/layer-editor.component';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { FooterComponent } from './components/footer/footer.component'
 
-@NgModule({
-  declarations: [
-    AppComponent,
-    NavigationComponent,
-    MenuComponent,
-    MapComponent,
-    DesignComponent,
-    ControlsComponent,
-    PrintingComponent,
-    SharingComponent,
-    ColorsComponent,
-    DownloadComponent,
-    GroupEditorComponent,
-    LayerEditorComponent,
-    FooterComponent,
-  ],
-  imports: [
-    BrowserModule,
-    CommonModule,
-    FormsModule,
-    HttpClientModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
-})
+@NgModule({ declarations: [
+        AppComponent,
+        NavigationComponent,
+        MenuComponent,
+        MapComponent,
+        DesignComponent,
+        ControlsComponent,
+        PrintingComponent,
+        SharingComponent,
+        ColorsComponent,
+        DownloadComponent,
+        GroupEditorComponent,
+        LayerEditorComponent,
+        FooterComponent,
+    ],
+    bootstrap: [AppComponent], imports: [BrowserModule,
+        CommonModule,
+        FormsModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class AppModule { }
