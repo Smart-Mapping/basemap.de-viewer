@@ -148,7 +148,7 @@ export class PrintingComponent implements OnInit, AfterViewInit {
     extraBottom.style.height = padding + "mm"
     extraBottom.style.fontSize = "3mm"
     extraBottom.children.item(0)!.textContent = "Maßstab 1:" + (this.isScaleLocked ? this.lockedScale : this.scale)
-    extraBottom.children.item(1)!.textContent = environment.printAttribution + (this.mapService.activeBasemap?.topPlusBg ? " | Außerhalb Deutschlands: ©  OpenStreetMap  contributors, TopPlusOpen" : "")
+    extraBottom.children.item(1)!.innerHTML = this.getAttributionHtml()
     const printMap = new Map({
       container: renderContainer,
       style: this.mapService.map!.getStyle(),
@@ -328,6 +328,17 @@ export class PrintingComponent implements OnInit, AfterViewInit {
     const printDistance = (this.printFormat.height - ((this.printFormat.width / 20) * (isPortrait ? 5 : 2))) / 1000000
 
     this.scale = parseInt((geoDistance / printDistance).toFixed(0))
+  }
+
+  getAttributionHtml = () => {
+    let attributionList = new Set();
+    for (let [key, value] of Object.entries(this.mapService.map!.getStyle().sources)) {
+      if (value.type == 'vector' || value.type == 'raster'
+        || value.type == 'raster-dem' || value.type == 'geojson') {
+        attributionList.add(value.attribution)
+      }
+    };
+    return Array.from(attributionList).join(' | ')
   }
 
 }

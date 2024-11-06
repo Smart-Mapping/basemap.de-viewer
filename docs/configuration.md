@@ -23,10 +23,6 @@ Height (pixel) of the logo in the application header.
 
 URL of the logo to be inserted into PDF print files.
 
-`printAttribution`: string
-
-Atttribution to be inserted in the PDF print files.
-
 `topPlusURL`: string 
 
 GetMap request URL to TopPlusOpen WMS. Can be replaced by other WMS services for global map background.

@@ -6,7 +6,6 @@ export let environment = {
   logo_small: 'assets/basemap-logo-text.svg',
   logoHeight: 35,
   printLogo: 'assets/logo.png',
-  printAttribution: '© 2024 basemap.de / BKG | Datenquellen: © GeoBasis-DE',
   footerLogo1: '',
   footerLogo2: '',
   topPlusURL: 'https://sgx.geodatenzentrum.de/wms_topplus_open?bbox={bbox-epsg-3857}&service=WMS&version=1.1.0&request=GetMap&layers=web_light_grau&styles=&srs=EPSG:3857&width=256&height=256&format=image/png&transparent=true',
