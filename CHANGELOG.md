@@ -3,6 +3,7 @@
 ### Changes
 
 * Remove configuration for attribution in print file. The attribution text is created on the basis of style source attributions.
+* Add new style "Welt"
 * Update Angular to v18
 
 ## v1.3.4 (2024-04-11)

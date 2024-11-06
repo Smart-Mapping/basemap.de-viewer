@@ -123,6 +123,15 @@ export let environment = {
       isBeta: true
     },
     {
+      name: 'Welt',
+      imgUrl: 'assets/basemap_colour.png',
+      styling: 'https://sgx.geodatenzentrum.de/gdz_basemapworld_vektor/styles/bm_web_wld_col.json',
+      topPlusBg: false,
+      topPlusBgBehind: 'Hintergrund_FF',
+      useMetaData: false,
+      isBeta: true
+    },
+    {
       name: 'Nacht',
       imgUrl: 'assets/basemap_night.png',
       styling: 'https://dev.adv-smart.de/styles/dev/bm_web_drk.json',
@@ -181,15 +190,6 @@ export let environment = {
       imgUrl: 'assets/basemap_print.png',
       styling: 'https://dev.adv-smart.de/styles/dev/bm_print_col_Pxx.json',
       topPlusBg: true,
-      topPlusBgBehind: 'Hintergrund_FF',
-      useMetaData: false,
-      isBeta: true
-    },
-    {
-      name: 'World',
-      imgUrl: 'assets/basemap_colour.png',
-      styling: 'https://dev.adv-smart.de/styles/dev/bm_web_wld_col.json',
-      topPlusBg: false,
       topPlusBgBehind: 'Hintergrund_FF',
       useMetaData: false,
       isBeta: true
