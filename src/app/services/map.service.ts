@@ -101,8 +101,11 @@ export class MapService {
       this.basemaps.push(
         new Basemap('external', '', this.config.externalStyleURL, false, '', false, false)
       )
+      this.setActiveBasemap(this.basemaps[this.basemaps.length - 1],this.basemaps.length - 1)
+    } else { 
+      this.activeBasemap = this.basemaps[this.activeBasemapIndex]
     }
-    this.activeBasemap = this.basemaps[this.activeBasemapIndex]
+
     environment.controls.forEach((control: any) => {
       let mapControl: IControl
       switch (control.type) {
@@ -563,6 +566,7 @@ export class MapService {
    * @param index Index of the basemap
    */
   setActiveBasemap(basemap: Basemap, index: number) {
+    console.log("INDEX: ", index)
     this.activeBasemap = basemap
     this.activeBasemapIndex = index
     this.saturation = 0

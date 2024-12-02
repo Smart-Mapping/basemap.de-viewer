@@ -1,3 +1,9 @@
+## v1.4.1 (2024-12-02)
+
+### Bug Fixes
+
+* Load external styles correctly via URL configuration after a new base style has been added.
+
 ## v1.4.0 (2024-11-06)
 
 ### Changes
