@@ -566,7 +566,6 @@ export class MapService {
    * @param index Index of the basemap
    */
   setActiveBasemap(basemap: Basemap, index: number) {
-    console.log("INDEX: ", index)
     this.activeBasemap = basemap
     this.activeBasemapIndex = index
     this.saturation = 0

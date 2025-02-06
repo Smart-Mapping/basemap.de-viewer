@@ -5,9 +5,10 @@ import { MapService } from 'src/app/services/map.service';
  * Component for sharing menu tab
  */
 @Component({
-  selector: 'app-sharing',
-  templateUrl: './sharing.component.html',
-  styleUrls: ['./sharing.component.scss']
+    selector: 'app-sharing',
+    templateUrl: './sharing.component.html',
+    styleUrls: ['./sharing.component.scss'],
+    standalone: false
 })
 export class SharingComponent {
 

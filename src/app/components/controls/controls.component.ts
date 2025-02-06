@@ -5,9 +5,10 @@ import { MapService } from 'src/app/services/map.service';
  * Component for controls menu tab
  */
 @Component({
-  selector: 'app-controls',
-  templateUrl: './controls.component.html',
-  styleUrls: ['./controls.component.scss']
+    selector: 'app-controls',
+    templateUrl: './controls.component.html',
+    styleUrls: ['./controls.component.scss'],
+    standalone: false
 })
 export class ControlsComponent {
   /**

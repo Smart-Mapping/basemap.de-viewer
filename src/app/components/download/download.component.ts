@@ -6,9 +6,10 @@ import { MapService } from 'src/app/services/map.service';
  * Component for download menu tab
  */
 @Component({
-  selector: 'app-download',
-  templateUrl: './download.component.html',
-  styleUrls: ['./download.component.scss']
+    selector: 'app-download',
+    templateUrl: './download.component.html',
+    styleUrls: ['./download.component.scss'],
+    standalone: false
 })
 export class DownloadComponent {
 

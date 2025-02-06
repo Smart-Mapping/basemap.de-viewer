@@ -6,9 +6,10 @@ import { MenuComponent } from '../menu/menu.component';
  * Component for navigation bar
  */
 @Component({
-  selector: 'app-navigation',
-  templateUrl: './navigation.component.html',
-  styleUrls: ['./navigation.component.scss']
+    selector: 'app-navigation',
+    templateUrl: './navigation.component.html',
+    styleUrls: ['./navigation.component.scss'],
+    standalone: false
 })
 export class NavigationComponent implements AfterViewInit {
 

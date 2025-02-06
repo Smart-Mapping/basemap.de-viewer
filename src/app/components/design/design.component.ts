@@ -6,9 +6,10 @@ import { MapService } from 'src/app/services/map.service';
  * Component for design menu tab
  */
 @Component({
-  selector: 'app-design',
-  templateUrl: './design.component.html',
-  styleUrls: ['./design.component.scss']
+    selector: 'app-design',
+    templateUrl: './design.component.html',
+    styleUrls: ['./design.component.scss'],
+    standalone: false
 })
 export class DesignComponent implements OnInit, AfterViewInit {
 

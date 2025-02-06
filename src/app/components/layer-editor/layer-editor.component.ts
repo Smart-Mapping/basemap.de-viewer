@@ -7,9 +7,10 @@ import { MapService } from 'src/app/services/map.service';
  * used if selected basemap has no metadata for editor functionality
  */
 @Component({
-  selector: 'app-layer-editor',
-  templateUrl: './layer-editor.component.html',
-  styleUrls: ['./layer-editor.component.scss']
+    selector: 'app-layer-editor',
+    templateUrl: './layer-editor.component.html',
+    styleUrls: ['./layer-editor.component.scss'],
+    standalone: false
 })
 export class LayerEditorComponent {
 

@@ -6,9 +6,10 @@ import { environment } from 'src/environments/environment';
  * Component for the menu
  */
 @Component({
-  selector: 'app-menu',
-  templateUrl: './menu.component.html',
-  styleUrls: ['./menu.component.scss']
+    selector: 'app-menu',
+    templateUrl: './menu.component.html',
+    styleUrls: ['./menu.component.scss'],
+    standalone: false
 })
 export class MenuComponent implements OnInit {
 

@@ -6,10 +6,11 @@ import { MapService } from 'src/app/services/map.service';
  * Component for displaying the map
  */
 @Component({
-  selector: 'app-map',
-  encapsulation: ViewEncapsulation.None,
-  templateUrl: './map.component.html',
-  styleUrls: ['./map.component.scss']
+    selector: 'app-map',
+    encapsulation: ViewEncapsulation.None,
+    templateUrl: './map.component.html',
+    styleUrls: ['./map.component.scss'],
+    standalone: false
 })
 export class MapComponent implements OnInit {
 

@@ -12,9 +12,10 @@ import distance from '@turf/distance'
  * Component for printing menu tab
  */
 @Component({
-  selector: 'app-printing',
-  templateUrl: './printing.component.html',
-  styleUrls: ['./printing.component.scss']
+    selector: 'app-printing',
+    templateUrl: './printing.component.html',
+    styleUrls: ['./printing.component.scss'],
+    standalone: false
 })
 export class PrintingComponent implements OnInit, AfterViewInit {
 

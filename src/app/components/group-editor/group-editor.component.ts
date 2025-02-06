@@ -7,9 +7,10 @@ import { MapService } from 'src/app/services/map.service';
  * used if selected basemap has metadata for editor functionality
  */
 @Component({
-  selector: 'app-group-editor',
-  templateUrl: './group-editor.component.html',
-  styleUrls: ['./group-editor.component.scss']
+    selector: 'app-group-editor',
+    templateUrl: './group-editor.component.html',
+    styleUrls: ['./group-editor.component.scss'],
+    standalone: false
 })
 export class GroupEditorComponent {
 
