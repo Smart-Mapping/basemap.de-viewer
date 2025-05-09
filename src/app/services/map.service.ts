@@ -13,7 +13,7 @@ import PositionedNavigationControl from '../components/controls/maplibre-gl.posi
 import PositionedScaleControl from '../components/controls/maplibre-gl.positioned.scale.control';
 import PositionedSearchControl from '../components/controls/maplibre-gl.positioned.search.control';
 import PositionedZoomLevelControl from '../components/controls/maplibre-gl.positioned.zoomlevel.control';
-import * as convert from 'color-convert';
+import convert from 'color-convert';
 
 /**
  * Service to interact with the map
