@@ -1,42 +1,46 @@
 <div #menuWrapper class="menu-wrapper">
-    <div class="menu">
-      <div class="{{logo_1 && logo_2 ? 'menu-footer' : ''}}">
-        <div class="accordion" id="accordionSidebar">
-            <app-design></app-design>
-            <!-- <app-colors></app-colors> -->
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="headingLayers">
-                    <button class="outer accordion-button collapsed fs-6" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#collapseLayers" aria-expanded="false" aria-controls="collapseLayers">
-                        <i class="bi bi-layers me-2 fs-5"></i>Ebenen
-                        <i class="bi bi-info-circle me-3 fs-5 info" role="tooltip" data-bs-toggle="tooltip" data-bs-placement="right" title="Hier kann die Sichtbarkeit, Farbe und Transparenz der einzelnen Layer eingestellt werden."></i>
-                    </button>
-                </h2>
-                <div id="collapseLayers" class="accordion-collapse collapse" aria-labelledby="headingLayers"
-                    data-bs-parent="#accordionSidebar">
-                    <div class="accordion-body ps-3">
-                        <div class="accordion layer-container" id="accordionLayerGroups">
-                            <div *ngIf="!this.mapService.activeBasemap?.useMetaData">
-                                <app-layer-editor></app-layer-editor>
-                            </div>
-                            <div *ngIf="this.mapService.activeBasemap?.useMetaData">
-                                <app-group-editor></app-group-editor>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+  <div class="menu">
+    <div class="{{logo_1 && logo_2 ? 'menu-footer' : ''}}">
+      <div class="accordion" id="accordionSidebar">
+        <app-design></app-design>
+        <!-- <app-colors></app-colors> -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingLayers">
+            <button class="outer accordion-button collapsed fs-6" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseLayers" aria-expanded="false" aria-controls="collapseLayers">
+              <i class="bi bi-layers me-2 fs-5"></i>Ebenen
+              <i class="bi bi-info-circle me-3 fs-5 info" role="tooltip" data-bs-toggle="tooltip" data-bs-placement="right" title="Hier kann die Sichtbarkeit, Farbe und Transparenz der einzelnen Layer eingestellt werden."></i>
+            </button>
+          </h2>
+          <div id="collapseLayers" class="accordion-collapse collapse" aria-labelledby="headingLayers"
+            data-bs-parent="#accordionSidebar">
+            <div class="accordion-body ps-3">
+              <div class="accordion layer-container" id="accordionLayerGroups">
+                @if (!this.mapService.activeBasemap?.useMetaData) {
+                  <div>
+                    <app-layer-editor></app-layer-editor>
+                  </div>
+                }
+                @if (this.mapService.activeBasemap?.useMetaData) {
+                  <div>
+                    <app-group-editor></app-group-editor>
+                  </div>
+                }
+              </div>
             </div>
-            <app-controls></app-controls>
-            <app-printing></app-printing>
-            <app-sharing></app-sharing>
-            <app-download></app-download>
+          </div>
         </div>
+        <app-controls></app-controls>
+        <app-printing></app-printing>
+        <app-sharing></app-sharing>
+        <app-download></app-download>
       </div>
-        <app-footer></app-footer>
     </div>
+    <app-footer></app-footer>
+  </div>
 
-    <div class="print-overlay d-flex align-items-center justify-content-center" style="visibility: hidden;">
-        <div class="selector d-flex align-items-center">
-        </div>
+  <div class="print-overlay d-flex align-items-center justify-content-center" style="visibility: hidden;">
+    <div class="selector d-flex align-items-center">
     </div>
+  </div>
 </div>

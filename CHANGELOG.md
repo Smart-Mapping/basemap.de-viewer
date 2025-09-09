@@ -1,3 +1,10 @@
+## v1.4.3 (2025-09-09)
+
+### Maintenance
+
+* Update Angular to v20
+* Update dependencies
+
 ## v1.4.2 (2025-02-06)
 
 ### Maintenance

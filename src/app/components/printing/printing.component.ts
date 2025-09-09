@@ -157,7 +157,9 @@ export class PrintingComponent implements OnInit, AfterViewInit {
       bearing: 0,
       pitch: 0,
       interactive: false,
-      preserveDrawingBuffer: true,
+      canvasContextAttributes: {
+        preserveDrawingBuffer: true,
+      },
       fadeDuration: 0,
       attributionControl: false
     })

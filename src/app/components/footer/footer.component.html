@@ -1,10 +1,12 @@
-<div *ngIf="environment.footerLogo1 !== '' && environment.footerLogo2 !== ''" class="footer container-fluid">
-  <div class="row py-3">
-    <div class="col-6  ps-4">
-      <img #logo_1 src="{{environment.footerLogo1}}" alt="{{environment.name + ' logo'}}" height="{{environment.logoHeight + 10}}" >
+@if (environment.footerLogo1 !== '' && environment.footerLogo2 !== '') {
+  <div class="footer container-fluid">
+    <div class="row py-3">
+      <div class="col-6  ps-4">
+        <img #logo_1 src="{{environment.footerLogo1}}" alt="{{environment.name + ' logo'}}" height="{{environment.logoHeight + 10}}" >
+      </div>
+      <div class="col-6 pe-4 text-right">
+        <img #logo_2 src="{{environment.footerLogo2}}" alt="{{environment.name + ' logo'}}" height="{{environment.logoHeight + 10}}" >
+      </div>
     </div>
-    <div class="col-6 pe-4 text-right">
-      <img #logo_2 src="{{environment.footerLogo2}}" alt="{{environment.name + ' logo'}}" height="{{environment.logoHeight + 10}}" >
-    </div>
- </div>
-</div>
+  </div>
+}
