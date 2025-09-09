@@ -312,7 +312,9 @@ export class MapService {
       pitch: this.pitch,
       bearing: this.bearing,
       zoom: this.zoom,
-      preserveDrawingBuffer: true,
+      canvasContextAttributes: {
+        preserveDrawingBuffer: true,
+      },
       center: [this.lon, this.lat],
       maxZoom: 19
     })
