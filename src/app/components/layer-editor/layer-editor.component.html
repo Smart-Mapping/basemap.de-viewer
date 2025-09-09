@@ -1,57 +1,65 @@
-<div *ngFor="let group of this.mapService.layerGroups" class="accordion-item">
-  <div class="accordion-header ms-1" id="{{'heading' + group.uuid}}">
-    <div class="d-flex">
-      <div class="form-check form-switch">
-        <input class="form-check-input" type="checkbox" [checked]="group.visible" (click)="toggleGroup(group)">
-      </div>
-      <button class="accordion-button collapsed py-0 ps-0" type="button" data-bs-toggle="collapse"
-        attr.data-bs-target="{{'#collapse' + group.uuid}}" aria-expanded="false"
-        attr.aria-controls="{{'collapse' + group.uuid}}">
-        <label class="form-check-label">{{group.name}}</label>
-      </button>
-    </div>
-  </div>
-  <div id="{{'collapse' + group.uuid}}" class="accordion-collapse collapse"
-    attr.aria-labelledby="{{'heading' + group.uuid}}" data-bs-parent="#accordionLayerGroups">
-    <div class="accordion-body" style="padding-right: 2.5rem;">
-      <div *ngFor="let layer of group.layers; let j = index" class="accordion" id="{{'accordion' + layer.uuid}}">
-        <div class="accordion-header ms-1" id="{{'heading' + layer.uuid}}">
-          <div class="d-flex">
-            <div class="form-check form-switch">
-              <input class="form-check-input" [checked]="layer.visible" type="checkbox"
-                (click)="toggleLayer(group, layer)">
-            </div>
-            <button class="accordion-button collapsed py-0 ps-0" type="button" data-bs-toggle="collapse"
-              attr.data-bs-target="{{'#collapse' + layer.uuid}}" aria-expanded="false"
-              attr.aria-controls="{{'collapse' + layer.uuid}}">
-              <label class="form-check-label pe-2" style="overflow-wrap: anywhere;">
-                {{layer.name}}
-              </label>
-            </button>
-          </div>
+@for (group of this.mapService.layerGroups; track group) {
+  <div class="accordion-item">
+    <div class="accordion-header ms-1" id="{{'heading' + group.uuid}}">
+      <div class="d-flex">
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" [checked]="group.visible" (click)="toggleGroup(group)">
         </div>
-        <div id="{{'collapse' + layer.uuid}}" class="accordion-collapse collapse"
-          attr.aria-labelledby="{{'heading' + layer.uuid}}" attr.data-bs-parent="{{'#accordion' + layer.uuid}}">
-          <div class="accordion-body" style="padding-right: 2.5rem; padding-left: 2.75rem;">
-            <div class="d-flex align-items-center pb-1" *ngIf="layer.maplibreLayer.type !== 'raster'">
-              <label class="form-check-label pe-3">Farbe</label>
-              <input (input)="changeLayerColor(layer, $event)" type="color" class="form-control form-control-color"
-                [value]="layer.color">
-            </div>
-            <div class="d-flex align-items-center justify-content-between pb-1">
-              <label class="form-check-label">Transparenz</label>
-              <input (input)="changeLayerOpacity(layer, $event)" type="range" class="form-range px-3" min="0" max="1"
-                step="0.1" [value]="layer.opacity">
-              <div style="width: 3rem;">{{layer.opacity}}</div>
-            </div>
-            <div class="d-flex align-items-center" *ngIf="layer.has3D">
-              <label class="form-check-label pe-3">3D-Effekt ausschalten</label>
-              <input (input)="changeLayer3D(layer)" type="checkbox" class="form-check-input"
-                [checked]="layer.threeDimOff">
-            </div>
-          </div>
-        </div>
+        <button class="accordion-button collapsed py-0 ps-0" type="button" data-bs-toggle="collapse"
+          attr.data-bs-target="{{'#collapse' + group.uuid}}" aria-expanded="false"
+          attr.aria-controls="{{'collapse' + group.uuid}}">
+          <label class="form-check-label">{{group.name}}</label>
+        </button>
       </div>
     </div>
+    <div id="{{'collapse' + group.uuid}}" class="accordion-collapse collapse"
+      attr.aria-labelledby="{{'heading' + group.uuid}}" data-bs-parent="#accordionLayerGroups">
+      <div class="accordion-body" style="padding-right: 2.5rem;">
+        @for (layer of group.layers; track layer; let j = $index) {
+          <div class="accordion" id="{{'accordion' + layer.uuid}}">
+            <div class="accordion-header ms-1" id="{{'heading' + layer.uuid}}">
+              <div class="d-flex">
+                <div class="form-check form-switch">
+                  <input class="form-check-input" [checked]="layer.visible" type="checkbox"
+                    (click)="toggleLayer(group, layer)">
+                </div>
+                <button class="accordion-button collapsed py-0 ps-0" type="button" data-bs-toggle="collapse"
+                  attr.data-bs-target="{{'#collapse' + layer.uuid}}" aria-expanded="false"
+                  attr.aria-controls="{{'collapse' + layer.uuid}}">
+                  <label class="form-check-label pe-2" style="overflow-wrap: anywhere;">
+                    {{layer.name}}
+                  </label>
+                </button>
+              </div>
+            </div>
+            <div id="{{'collapse' + layer.uuid}}" class="accordion-collapse collapse"
+              attr.aria-labelledby="{{'heading' + layer.uuid}}" attr.data-bs-parent="{{'#accordion' + layer.uuid}}">
+              <div class="accordion-body" style="padding-right: 2.5rem; padding-left: 2.75rem;">
+                @if (layer.maplibreLayer.type !== 'raster') {
+                  <div class="d-flex align-items-center pb-1">
+                    <label class="form-check-label pe-3">Farbe</label>
+                    <input (input)="changeLayerColor(layer, $event)" type="color" class="form-control form-control-color"
+                      [value]="layer.color">
+                  </div>
+                }
+                <div class="d-flex align-items-center justify-content-between pb-1">
+                  <label class="form-check-label">Transparenz</label>
+                  <input (input)="changeLayerOpacity(layer, $event)" type="range" class="form-range px-3" min="0" max="1"
+                    step="0.1" [value]="layer.opacity">
+                  <div style="width: 3rem;">{{layer.opacity}}</div>
+                </div>
+                @if (layer.has3D) {
+                  <div class="d-flex align-items-center">
+                    <label class="form-check-label pe-3">3D-Effekt ausschalten</label>
+                    <input (input)="changeLayer3D(layer)" type="checkbox" class="form-check-input"
+                      [checked]="layer.threeDimOff">
+                  </div>
+                }
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
   </div>
-</div>
+}
