@@ -1,66 +1,70 @@
 
 <div class="accordion-item">
-    <h2 class="accordion-header" id="headingPrint">
-        <button class="outer accordion-button collapsed fs-6" type="button" data-bs-toggle="collapse"
-            data-bs-target="#collapsePrint" aria-expanded="false" aria-controls="collapsePrint" #collapsePrint>
-            <i class="bi bi-printer me-2 fs-5"></i>Drucken
-            <i class="bi bi-info-circle info me-3 fs-5 " role="tooltip" data-bs-toggle="tooltip" data-bs-placement="right" title="Hier kann der gewünschte Kartenausschnitt als Karte im PDF- oder PNG-Format gespeichert werden."></i>
-        </button>
-    </h2>
-    <div id="collapsePrint" class="accordion-collapse collapse" aria-labelledby="headingPrint"
-        data-bs-parent="#accordionSidebar">
-        <div class="accordion-body">
-            <div>
-                <div class="mb-3">
-                    <label for="fileSelect" class="form-label">Dateiformat</label>
-                    <select id="fileSelect" class="form-select" (change)="setFileFormat($event)">
-                        <option>PDF</option>
-                        <option>PNG</option>
-                    </select>
-                </div>
-                <div class="mb-3">
-                    <label for="orientation-select" class="form-label">Ausrichtung</label>
-                    <select id="orientation-select" class="form-select" (change)="setOrientation($event)">
-                        <option>Hochformat</option>
-                        <option>Querformat</option>
-                    </select>
-                </div>
-                <div class="mb-3">
-                    <label class="form-label">Größe</label>
-                    <select class="form-select" (change)="setPrintFormat($event)">
-                        <option *ngFor="let format of this.printFormats">
-                            {{format.name}}
-                        </option>
-                    </select>
-                </div>
-                <div class="mb-3">
-                    <label class="form-label">DPI</label>
-                    <select class="form-select" (change)="setDPI($event)">
-                        <option *ngFor="let dpi of this.dpis">
-                            {{dpi}}
-                        </option>
-                    </select>
-
-                </div>
-                <div class="mb-3">
-                    <label for="scale-select" class="form-label">Maßstab</label>
-                    <div class="d-flex">
-                        <input class="form-control" type="number"
-                            value="{{isScaleLocked || isZooming ? this.lockedScale : this.scale}}"
-                            (change)="onScaleInput($event)">
-                        <i class="bi ps-2 {{this.isScaleLocked ? 'bi-lock' : 'bi-unlock'}}" style="font-size: 25px;"
-                            (click)="toggleScaleLocked()"></i>
-                    </div>
-                </div>
-                <div class="mb-4">
-                    <label for="mapText-container" class="form-label">Beschriftung</label>
-                    <div id="mapText-container">
-                        <input class="form-control mb-2" type="text" id="header-input" placeholder="basemap.de" #headerInput>
-                        <input class="form-control" type="text" id="description-input" placeholder="Kartenbeschreibung" #descriptionInput>
-                    </div>
-                </div>
-                <button (click)="printMap()" class="btn btn-primary w-100" #printBtn>Karte erzeugen</button>
-            </div>
+  <h2 class="accordion-header" id="headingPrint">
+    <button class="outer accordion-button collapsed fs-6" type="button" data-bs-toggle="collapse"
+      data-bs-target="#collapsePrint" aria-expanded="false" aria-controls="collapsePrint" #collapsePrint>
+      <i class="bi bi-printer me-2 fs-5"></i>Drucken
+      <i class="bi bi-info-circle info me-3 fs-5 " role="tooltip" data-bs-toggle="tooltip" data-bs-placement="right" title="Hier kann der gewünschte Kartenausschnitt als Karte im PDF- oder PNG-Format gespeichert werden."></i>
+    </button>
+  </h2>
+  <div id="collapsePrint" class="accordion-collapse collapse" aria-labelledby="headingPrint"
+    data-bs-parent="#accordionSidebar">
+    <div class="accordion-body">
+      <div>
+        <div class="mb-3">
+          <label for="fileSelect" class="form-label">Dateiformat</label>
+          <select id="fileSelect" class="form-select" (change)="setFileFormat($event)">
+            <option>PDF</option>
+            <option>PNG</option>
+          </select>
         </div>
+        <div class="mb-3">
+          <label for="orientation-select" class="form-label">Ausrichtung</label>
+          <select id="orientation-select" class="form-select" (change)="setOrientation($event)">
+            <option>Hochformat</option>
+            <option>Querformat</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Größe</label>
+          <select class="form-select" (change)="setPrintFormat($event)">
+            @for (format of this.printFormats; track format) {
+              <option>
+                {{format.name}}
+              </option>
+            }
+          </select>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">DPI</label>
+          <select class="form-select" (change)="setDPI($event)">
+            @for (dpi of this.dpis; track dpi) {
+              <option>
+                {{dpi}}
+              </option>
+            }
+          </select>
+
+        </div>
+        <div class="mb-3">
+          <label for="scale-select" class="form-label">Maßstab</label>
+          <div class="d-flex">
+            <input class="form-control" type="number"
+              value="{{isScaleLocked || isZooming ? this.lockedScale : this.scale}}"
+              (change)="onScaleInput($event)">
+            <i class="bi ps-2 {{this.isScaleLocked ? 'bi-lock' : 'bi-unlock'}}" style="font-size: 25px;"
+            (click)="toggleScaleLocked()"></i>
+          </div>
+        </div>
+        <div class="mb-4">
+          <label for="mapText-container" class="form-label">Beschriftung</label>
+          <div id="mapText-container">
+            <input class="form-control mb-2" type="text" id="header-input" placeholder="basemap.de" #headerInput>
+            <input class="form-control" type="text" id="description-input" placeholder="Kartenbeschreibung" #descriptionInput>
+          </div>
+        </div>
+        <button (click)="printMap()" class="btn btn-primary w-100" #printBtn>Karte erzeugen</button>
+      </div>
     </div>
+  </div>
 </div>
