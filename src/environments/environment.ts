@@ -98,7 +98,7 @@ export let environment = {
     {
       name: 'Relief',
       imgUrl: 'assets/basemap_hillshade.png',
-      styling: 'https://dev.adv-smart.de/styles/dev/bm_web_top.json',
+      styling: 'https://dev.adv-smart.de/styles/dev/v2/bm_web_top.json',
       topPlusBg: true,
       topPlusBgBehind: 'Hintergrund',
       useMetaData: false,
@@ -107,7 +107,7 @@ export let environment = {
     {
       name: 'Farbe',
       imgUrl: 'assets/basemap_colour.png',
-      styling: 'https://dev.adv-smart.de/styles/dev/bm_web_col.json',
+      styling: 'https://dev.adv-smart.de/styles/dev/v2/bm_web_col.json',
       topPlusBg: true,
       topPlusBgBehind: 'Hintergrund',
       useMetaData: false,
@@ -116,7 +116,7 @@ export let environment = {
     {
       name: 'Grau',
       imgUrl: 'assets/basemap_greyscale.png',
-      styling: 'https://dev.adv-smart.de/styles/dev/bm_web_gry.json',
+      styling: 'https://dev.adv-smart.de/styles/dev/v2/bm_web_gry.json',
       topPlusBg: true,
       topPlusBgBehind: 'Hintergrund',
       useMetaData: false,
@@ -134,7 +134,7 @@ export let environment = {
     {
       name: 'Nacht',
       imgUrl: 'assets/basemap_night.png',
-      styling: 'https://dev.adv-smart.de/styles/dev/bm_web_drk.json',
+      styling: 'https://dev.adv-smart.de/styles/dev/v2/bm_web_drk.json',
       topPlusBg: true,
       topPlusBgBehind: 'Hintergrund',
       useMetaData: false,
@@ -143,7 +143,7 @@ export let environment = {
     {
       name: 'Binär',
       imgUrl: 'assets/basemap_bw.png',
-      styling: 'https://dev.adv-smart.de/styles/dev/bm_web_bin.json',
+      styling: 'https://dev.adv-smart.de/styles/dev/v2/bm_web_bin.json',
       topPlusBg: true,
       topPlusBgBehind: 'Hintergrund',
       useMetaData: false,
@@ -152,7 +152,7 @@ export let environment = {
     {
       name: 'P10 Grau',
       imgUrl: 'assets/basemap_print_gry.png',
-      styling: 'https://dev.adv-smart.de/styles/dev/bm_print_gry.json',
+      styling: 'https://dev.adv-smart.de/styles/dev/v2/bm_print_gry.json',
       topPlusBg: true,
       topPlusBgBehind: 'Hintergrund_FF',
       useMetaData: false,
