@@ -1,3 +1,10 @@
+## v1.4.4 (2025-10-27)
+
+### Maintenance
+
+* Change the order of styles in the style selection.
+* Update dependencies
+
 ## v1.4.3 (2025-09-09)
 
 ### Maintenance

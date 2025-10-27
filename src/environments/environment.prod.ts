@@ -96,20 +96,20 @@ export let environment = {
   ],
   basemaps: [
     {
-      name: 'Welt',
-      imgUrl: 'assets/basemap_colour.png',
-      styling: 'https://sgx.geodatenzentrum.de/gdz_basemapworld_vektor/styles/bm_web_wld_col.json',
-      topPlusBg: false,
-      topPlusBgBehind: '',
-      useMetaData: false,
-      isBeta: false
-    },
-    {
       name: 'Relief',
       imgUrl: 'assets/basemap_hillshade.png',
       styling: 'https://sgx.geodatenzentrum.de/gdz_basemapde_vektor/styles/bm_web_top.json',
       topPlusBg: true,
       topPlusBgBehind: 'Hintergrund',
+      useMetaData: false,
+      isBeta: false
+    },
+    {
+      name: 'Welt',
+      imgUrl: 'assets/basemap_colour.png',
+      styling: 'https://sgx.geodatenzentrum.de/gdz_basemapworld_vektor/styles/bm_web_wld_col.json',
+      topPlusBg: false,
+      topPlusBgBehind: '',
       useMetaData: false,
       isBeta: false
     },
