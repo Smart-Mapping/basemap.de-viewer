@@ -1,3 +1,9 @@
+## v1.4.5 (2025-11-17)
+
+### Maintenance
+
+* Change info button to link to legal notice.
+
 ## v1.4.4 (2025-10-27)
 
 ### Maintenance
