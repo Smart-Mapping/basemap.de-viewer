@@ -125,9 +125,9 @@ export let environment = {
     {
       name: 'Welt',
       imgUrl: 'assets/basemap_colour.png',
-      styling: 'https://sgx.geodatenzentrum.de/gdz_basemapworld_vektor/styles/bm_web_wld_col.json',
+      styling: 'https://dev.adv-smart.de/styles/dev/v2/bm_web_wld_col.json',
       topPlusBg: false,
-      topPlusBgBehind: 'Hintergrund_FF',
+      topPlusBgBehind: '',
       useMetaData: false,
       isBeta: true
     },
@@ -150,27 +150,27 @@ export let environment = {
       isBeta: true
     },
     {
-      name: 'P10 Grau',
+      name: 'Pxx Col',
+      imgUrl: 'assets/basemap_print.png',
+      styling: 'https://dev.adv-smart.de/styles/dev/bm_print_col.json',
+      topPlusBg: true,
+      topPlusBgBehind: 'Hintergrund_FF',
+      useMetaData: false,
+      isBeta: true
+    },
+    {
+      name: 'Pxx Top',
+      imgUrl: 'assets/basemap_print.png',
+      styling: 'https://dev.adv-smart.de/styles/dev/v2/bm_print_top.json',
+      topPlusBg: true,
+      topPlusBgBehind: 'Hintergrund_FF',
+      useMetaData: false,
+      isBeta: true
+    },
+    {
+      name: 'Pxx Gry',
       imgUrl: 'assets/basemap_print_gry.png',
       styling: 'https://dev.adv-smart.de/styles/dev/v2/bm_print_gry.json',
-      topPlusBg: true,
-      topPlusBgBehind: 'Hintergrund_FF',
-      useMetaData: false,
-      isBeta: true
-    },    
-    {
-      name: 'P50 Bw',
-      imgUrl: 'assets/basemap_print.png',
-      styling: 'https://dev.adv-smart.de/styles/dev/bm_print_col_P50_BW.json',
-      topPlusBg: true,
-      topPlusBgBehind: 'Hintergrund_FF',
-      useMetaData: false,
-      isBeta: true
-    },    
-    {
-      name: 'Pxx',
-      imgUrl: 'assets/basemap_print.png',
-      styling: 'https://dev.adv-smart.de/styles/dev/bm_print_col_Pxx.json',
       topPlusBg: true,
       topPlusBgBehind: 'Hintergrund_FF',
       useMetaData: false,

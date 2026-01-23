@@ -1,6 +1,6 @@
 {
   "name": "basemap-viewer",
-  "version": "1.4.5",
+  "version": "1.4.6",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -8,18 +8,19 @@
     "build-adv-dev": "ng build --base-href /viewer/ --configuration=adv-dev",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "compodoc": "npx compodoc -p tsconfig.doc.json"
+    "compodoc": "npx compodoc -p tsconfig.doc.json",
+    "lint": "ng lint"
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "^20.2.4",
-    "@angular/common": "^20.2.4",
-    "@angular/compiler": "^20.2.4",
-    "@angular/core": "^20.2.4",
-    "@angular/forms": "^20.2.4",
-    "@angular/platform-browser": "^20.2.4",
-    "@angular/platform-browser-dynamic": "^20.2.4",
-    "@angular/router": "^20.2.4",
+    "@angular/animations": "^21.1.1",
+    "@angular/common": "^21.1.1",
+    "@angular/compiler": "^21.1.1",
+    "@angular/core": "^21.1.1",
+    "@angular/forms": "^21.1.1",
+    "@angular/platform-browser": "^21.1.1",
+    "@angular/platform-browser-dynamic": "^21.1.1",
+    "@angular/router": "^21.1.1",
     "@turf/distance": "^7.2.0",
     "@types/geojson": "^7946.0.8",
     "bootstrap": "^5.2.0",
@@ -27,7 +28,7 @@
     "color-convert": "^3.0.1",
     "file-saver": "^2.0.5",
     "html2canvas": "^1.4.1",
-    "jspdf": "^3.0.1",
+    "jspdf": "^4.0.0",
     "maplibre-gl": "^5.7.1",
     "rxjs": "~7.8.1",
     "tslib": "^2.3.0",
@@ -35,21 +36,24 @@
     "zone.js": "~0.15.0"
   },
   "devDependencies": {
-    "@angular/build": "^20.2.2",
-    "@angular/cli": "^20.2.2",
-    "@angular/compiler-cli": "^20.2.4",
+    "@angular/build": "^21.1.1",
+    "@angular/cli": "^21.1.1",
+    "@angular/compiler-cli": "^21.1.1",
     "@compodoc/compodoc": "^1.1.19",
     "@types/color-convert": "^2.0.0",
     "@types/file-saver": "^2.0.5",
     "@types/jasmine": "~5.1.0",
     "@types/node": "^24.3.1",
     "@types/uuid": "^10.0.0",
+    "angular-eslint": "21.1.0",
+    "eslint": "^9.39.1",
     "jasmine-core": "^5.1.1",
     "karma": "^6.4.2",
     "karma-chrome-launcher": "~3.2.0",
     "karma-coverage": "~2.2.1",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
-    "typescript": "^5.4.5"
+    "typescript": "^5.4.5",
+    "typescript-eslint": "8.47.0"
   }
 }
