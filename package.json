@@ -1,6 +1,6 @@
 {
   "name": "basemap-viewer",
-  "version": "1.4.5",
+  "version": "1.4.6",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -27,7 +27,7 @@
     "color-convert": "^3.0.1",
     "file-saver": "^2.0.5",
     "html2canvas": "^1.4.1",
-    "jspdf": "^3.0.1",
+    "jspdf": "^4.0.0",
     "maplibre-gl": "^5.7.1",
     "rxjs": "~7.8.1",
     "tslib": "^2.3.0",
