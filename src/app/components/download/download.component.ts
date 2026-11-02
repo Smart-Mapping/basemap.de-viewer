@@ -24,7 +24,7 @@ export class DownloadComponent {
   downloadStyle() {
     let json = this.mapService.map?.getStyle()
     if (!json) return
-    json.center = this.mapService.map?.getCenter().toArray().map(i => parseFloat(i.toFixed(4)))
+    json.center = this.mapService.map?.getCenter().toArray()
     json.pitch = this.mapService.map?.getPitch()
     json.bearing = this.mapService.map?.getBearing()
     saveAs(new Blob([JSON.stringify(json)], { type: "application/json" }), "style_" + new Date().toLocaleTimeString() + ".json");

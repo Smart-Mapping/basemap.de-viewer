@@ -36,6 +36,6 @@ jobs:
         with:
           host: ${{ secrets.ADV_DEV_HOST }}
           username: ${{ secrets.ADV_DEV_USER }}
-          password: ${{ secrets.ADV_DEV_PASS }}
+          key: ${{ secrets.ADV_DEV_PASS }}
           source: ./basemap-viewer
           target: ${{ secrets.ADV_DEV_PATH }}

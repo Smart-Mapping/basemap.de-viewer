@@ -1,3 +1,17 @@
+## v1.4.7 (2026-11-02)
+
+### Maintenance
+
+* Update MapLibre GL JS to v6
+
+## v1.4.6 (2026-01-23)
+
+### Maintenance
+
+* Update style URLs
+* Update Angular to v21
+* Update dependencies
+
 ## v1.4.5 (2025-11-17)
 
 ### Maintenance
