@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Map, IControl, type AllPaintProperties } from 'maplibre-gl'
+import { Map, IControl, type AllPaintProperties, setWorkerUrl } from 'maplibre-gl'
 import { HttpClient } from '@angular/common/http';
 import { share } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
@@ -14,6 +14,8 @@ import PositionedScaleControl from '../components/controls/maplibre-gl.positione
 import PositionedSearchControl from '../components/controls/maplibre-gl.positioned.search.control';
 import PositionedZoomLevelControl from '../components/controls/maplibre-gl.positioned.zoomlevel.control';
 import convert from 'color-convert';
+
+setWorkerUrl(new URL('maplibre-gl/dist/maplibre-gl-worker.mjs', import.meta.url).toString());
 
 /**
  * Service to interact with the map
