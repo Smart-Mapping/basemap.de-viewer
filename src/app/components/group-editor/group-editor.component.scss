@@ -1,3 +1,5 @@
+@use "src/accordionfix.scss";
+
 .accordion-button:not(.collapsed) {
     background-color: white
 }
@@ -5,4 +7,3 @@
     border: none;
     padding: 0;
 }
-@import "src/accordionfix.scss"
