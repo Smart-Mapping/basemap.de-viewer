@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Map, IControl } from 'maplibre-gl'
+import { Map, IControl, type AllPaintProperties } from 'maplibre-gl'
 import { HttpClient } from '@angular/common/http';
 import { share } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
@@ -354,22 +354,25 @@ export class MapService {
               subgroup.changed = true
               subgroup.layers.forEach(layer => {
                 layer.changed = true
+                const type = layer.maplibreLayer.type === 'symbol' ? 'text' : layer.maplibreLayer.type
+                const colorProperty = `${type}-color` as keyof AllPaintProperties
+                const opacityProperty = `${type}-opacity` as keyof AllPaintProperties
                 switch (layer.metaType) {
                   case 'fill':
-                    this.map?.setPaintProperty(layer.name, (layer.maplibreLayer.type === 'symbol' ? 'text' : layer.maplibreLayer.type) + '-opacity', subgroup?.fillOpacity)
-                    this.map?.setPaintProperty(layer.name, (layer.maplibreLayer.type === 'symbol' ? 'text' : layer.maplibreLayer.type) + '-color', subgroup?.fillColor)
+                    this.map?.setPaintProperty(layer.name, colorProperty, subgroup?.fillColor)
+                    this.map?.setPaintProperty(layer.name, opacityProperty, subgroup?.fillOpacity)
                     break
                   case 'circle':
-                    this.map?.setPaintProperty(layer.name, (layer.maplibreLayer.type === 'symbol' ? 'text' : layer.maplibreLayer.type) + '-opacity', subgroup?.circleOpacity)
-                    this.map?.setPaintProperty(layer.name, (layer.maplibreLayer.type === 'symbol' ? 'text' : layer.maplibreLayer.type) + '-color', subgroup?.circleColor)
+                    this.map?.setPaintProperty(layer.name, colorProperty, subgroup?.circleColor)
+                    this.map?.setPaintProperty(layer.name, opacityProperty, subgroup?.circleOpacity)
                     break
                   case 'line':
-                    this.map?.setPaintProperty(layer.name, (layer.maplibreLayer.type === 'symbol' ? 'text' : layer.maplibreLayer.type) + '-opacity', subgroup?.lineOpacity)
-                    this.map?.setPaintProperty(layer.name, (layer.maplibreLayer.type === 'symbol' ? 'text' : layer.maplibreLayer.type) + '-color', subgroup?.lineColor)
+                    this.map?.setPaintProperty(layer.name, opacityProperty, subgroup?.lineOpacity)
+                    this.map?.setPaintProperty(layer.name, colorProperty, subgroup?.lineColor)
                     break
                   case 'symbol':
-                    this.map?.setPaintProperty(layer.name, (layer.maplibreLayer.type === 'symbol' ? 'text' : layer.maplibreLayer.type) + '-opacity', subgroup?.symbolOpacity)
-                    this.map?.setPaintProperty(layer.name, (layer.maplibreLayer.type === 'symbol' ? 'text' : layer.maplibreLayer.type) + '-color', subgroup?.symbolColor)
+                    this.map?.setPaintProperty(layer.name, opacityProperty, subgroup?.symbolOpacity)
+                    this.map?.setPaintProperty(layer.name, colorProperty, subgroup?.symbolColor)
                     break
                 }
                 if (subgroup!.threeDimOff) {
@@ -412,8 +415,8 @@ export class MapService {
               layer.color = cl.color
               layer.opacity = cl.opacity
               layer.threeDimOff = cl.threeDimOff
-              this.map?.setPaintProperty(layer.name, (layer.maplibreLayer.type === 'symbol' ? 'text' : layer.maplibreLayer.type) + '-color', layer.color)
-              this.map?.setPaintProperty(layer.name, (layer.maplibreLayer.type === 'symbol' ? 'text' : layer.maplibreLayer.type) + '-opacity', layer.opacity)
+              this.map?.setPaintProperty(layer.name, `${layer.maplibreLayer.type === 'symbol' ? 'text' : layer.maplibreLayer.type}-color` as keyof AllPaintProperties, layer.color)
+              this.map?.setPaintProperty(layer.name, `${layer.maplibreLayer.type === 'symbol' ? 'text' : layer.maplibreLayer.type}-opacity` as keyof AllPaintProperties, layer.opacity)
               if (layer.threeDimOff) {
                 this.map?.setPaintProperty(layer.name, 'fill-extrusion-height', 0)
               }
@@ -530,7 +533,7 @@ export class MapService {
       }
       group.layers.filter(s => s.metaType === metaType).forEach(layer => {
         isColor ? layer.color = value : layer.opacity = value
-        this.map?.setPaintProperty(layer.name, (layer.maplibreLayer.type === 'symbol' ? 'text' : layer.maplibreLayer.type) + '-' + property, value)
+        this.map?.setPaintProperty(layer.name, `${layer.maplibreLayer.type === 'symbol' ? 'text' : layer.maplibreLayer.type}-${property}` as keyof AllPaintProperties, value)
       })
     }
   }
@@ -546,11 +549,11 @@ export class MapService {
     switch (property) {
       case 'color':
         layer.color = value
-        this.map?.setPaintProperty(layer.name, (layer.maplibreLayer.type === 'symbol' ? 'text' : layer.maplibreLayer.type) + '-color', layer.color)
+        this.map?.setPaintProperty(layer.name, `${layer.maplibreLayer.type === 'symbol' ? 'text' : layer.maplibreLayer.type}-color` as keyof AllPaintProperties, layer.color)
         break
       case 'opacity':
         layer.opacity = value
-        this.map?.setPaintProperty(layer.name, (layer.maplibreLayer.type === 'symbol' ? 'text' : layer.maplibreLayer.type) + '-opacity', layer.opacity)
+        this.map?.setPaintProperty(layer.name, `${layer.maplibreLayer.type === 'symbol' ? 'text' : layer.maplibreLayer.type}-opacity` as keyof AllPaintProperties, layer.opacity)
         break
       case '3d':
         layer.threeDimOff = !layer.threeDimOff
