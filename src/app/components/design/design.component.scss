@@ -1,3 +1,5 @@
+@use "src/accordionfix.scss";
+
 .basemap {
     cursor: pointer;
     overflow: hidden;
@@ -58,5 +60,3 @@
     cursor: pointer;
     outline: inherit;
 }
-
-@import "src/accordionfix.scss"

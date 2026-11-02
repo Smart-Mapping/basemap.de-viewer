@@ -152,7 +152,7 @@ export let environment = {
     {
       name: 'Pxx Col',
       imgUrl: 'assets/basemap_print.png',
-      styling: 'https://dev.adv-smart.de/styles/dev/bm_print_col.json',
+      styling: 'https://dev.adv-smart.de/styles/dev/v2/bm_print_col.json',
       topPlusBg: true,
       topPlusBgBehind: 'Hintergrund_FF',
       useMetaData: false,
