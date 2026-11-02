@@ -40,7 +40,12 @@
               "node_modules/bootstrap-icons/font/bootstrap-icons.css"
             ],
             "assets": [
-              "src/assets"
+              "src/assets",
+              {
+                "glob": "maplibre-gl-worker.mjs",
+                "input": "node_modules/maplibre-gl/dist/",
+                "output": "/assets/"
+              }
             ],
             "budgets": [
               {

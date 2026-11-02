@@ -15,7 +15,7 @@ import PositionedSearchControl from '../components/controls/maplibre-gl.position
 import PositionedZoomLevelControl from '../components/controls/maplibre-gl.positioned.zoomlevel.control';
 import convert from 'color-convert';
 
-setWorkerUrl(new URL('maplibre-gl/dist/maplibre-gl-worker.mjs', import.meta.url).toString());
+setWorkerUrl(new URL('assets/maplibre-gl-worker.mjs', import.meta.url).toString());
 
 /**
  * Service to interact with the map
