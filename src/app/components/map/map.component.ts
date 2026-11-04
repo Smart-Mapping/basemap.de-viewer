@@ -72,7 +72,7 @@ export class MapComponent implements OnInit {
             property.appendChild(value)
             row.appendChild(property)
             for (const key in feature.properties) {
-              if (feature.properties.hasOwnProperty(key)) {
+              if (Object.hasOwn(feature.properties, key)) {
                 let property = document.createElement('div') as HTMLDivElement
                 property.className = 'd-flex justify-content-between'
                 let name = document.createElement('div') as HTMLDivElement

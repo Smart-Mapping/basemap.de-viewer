@@ -1,3 +1,9 @@
+## v1.4.8 (2026-11-04)
+
+### Bug fixes
+
+* Popups did not appear when clicking on the map
+
 ## v1.4.7 (2026-11-02)
 
 ### Maintenance
