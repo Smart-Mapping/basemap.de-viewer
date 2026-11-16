@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Map, IControl, type AllPaintProperties, setWorkerUrl } from 'maplibre-gl'
+import { Map, IControl, type AllPaintProperties, setWorkerUrl, GPUInitializationError } from 'maplibre-gl'
 import { HttpClient } from '@angular/common/http';
 import { share } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
@@ -306,21 +306,30 @@ export class MapService {
   /**
    * Creates a map in the provided container element. Sets listener for map values and uses config to hide or change layers.
    * @param container
+   * @returns True if map was created successfully, false if map could not be created due to GPUInitializationError
    */
-  createMap(container: HTMLElement) {
-    this.map = new Map({
-      container: container,
-      style: this.basemaps[this.activeBasemapIndex].styling,
-      pitch: this.pitch,
-      bearing: this.bearing,
-      zoom: this.zoom,
-      canvasContextAttributes: {
-        preserveDrawingBuffer: true,
-      },
-      center: [this.lon, this.lat],
-      maxZoom: 19
-    })
-    this.map.on('move', () => {
+  createMap(container: HTMLElement) : boolean {
+    try {
+      this.map = new Map({
+        container: container,
+        style: this.basemaps[this.activeBasemapIndex].styling,
+        pitch: this.pitch,
+        bearing: this.bearing,
+        zoom: this.zoom,
+        canvasContextAttributes: {
+          preserveDrawingBuffer: true,
+        },
+        center: [this.lon, this.lat],
+        maxZoom: 19
+      })
+    } catch (error) {
+        if (error instanceof GPUInitializationError) {
+          return false
+        } else {
+            throw error;
+        }
+    }
+    this.map?.on('move', () => {
       this.pitch = parseFloat(this.map?.getPitch().toFixed(0) ?? "0")
       this.bearing = parseFloat(this.map?.getBearing().toFixed(0) ?? "0")
       this.zoom = parseFloat(this.map?.getZoom().toFixed(2) ?? "0")
@@ -334,7 +343,7 @@ export class MapService {
       this.saturation = 0
       this.changeHSL(initialSaturation, initalBrightness)
     }
-    this.map.once('styledata', () => {
+    this.map?.once('styledata', () => {
       this.addBackground()
       this.controls.forEach(control => this.toggleControl(control))
       if (this.activeBasemap?.useMetaData) {
@@ -429,6 +438,7 @@ export class MapService {
       }
     })
     document.querySelector('.maplibregl-ctrl-attrib-inner')?.setAttribute("role", "")
+    return true
   }
 
   /**

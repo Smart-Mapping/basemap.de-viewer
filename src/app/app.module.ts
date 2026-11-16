@@ -16,6 +16,7 @@ import { LayerEditorComponent } from './components/layer-editor/layer-editor.com
 import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { FooterComponent } from './components/footer/footer.component'
+import { MessageComponent } from './components/message/message.component';
 
 @NgModule({ declarations: [
         AppComponent,
@@ -31,6 +32,7 @@ import { FooterComponent } from './components/footer/footer.component'
         GroupEditorComponent,
         LayerEditorComponent,
         FooterComponent,
+        MessageComponent
     ],
     bootstrap: [AppComponent], imports: [BrowserModule,
         CommonModule,

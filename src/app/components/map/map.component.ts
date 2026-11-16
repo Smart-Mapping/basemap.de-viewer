@@ -18,6 +18,8 @@ export class MapComponent implements OnInit {
   @ViewChild('map', { static: true })
   container!: ElementRef<HTMLDivElement>
 
+  hasMapError: boolean = false
+
   /**
    * @ignore
    */
@@ -27,7 +29,7 @@ export class MapComponent implements OnInit {
    * Creates the map and sets a click listener for displaying popups
    */
   ngOnInit(): void {
-    this.mapService.createMap(this.container.nativeElement)
+    this.hasMapError = !this.mapService.createMap(this.container.nativeElement)
     this.mapService.map?.on('click', event => {
       if (!this.mapService.isInPrintMode) {
         const features = this.mapService.map?.queryRenderedFeatures(event.point)

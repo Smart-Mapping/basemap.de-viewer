@@ -1,3 +1,9 @@
+## v1.4.9 (2026-11-16)
+
+### Maintenance
+
+* Display an error message if WebGL2 is not enabled in the browser
+
 ## v1.4.8 (2026-11-04)
 
 ### Bug fixes
