@@ -1,4 +1,4 @@
-export let environment = {
+export const environment = {
   production: true,
   name: 'basemap.de',
   bkgAppId: '',
@@ -150,48 +150,5 @@ export let environment = {
       isBeta: true
     }
   ],
-  imprint: `
-  <h2>Datenschutzerklärung</h2>
-  <p> Sie erhalten als Nutzer unserer Internetseite in dieser Datenschutzerklärung alle notwendigen Informationen
-      darüber, wie, in welchem Umfang sowie zu welchem Zweck wir oder Drittanbieter Daten von Ihnen erheben und diese
-      verwenden. Die Erhebung und Nutzung Ihrer Daten erfolgt nach den Vorgaben des Bundesdatenschutzgesetzes (BDSG)
-      und des Telemediengesetzes (TMG).</p>
-  <h3>Auskunft, Löschung, Sperrung</h3>
-  <p> Sie erhalten jederzeit unentgeltlich Auskunft über die von uns gespeicherten personenbezogenen Daten zu Ihrer
-      Person sowie zur Herkunft, dem Empfänger und dem Zweck von Datenerhebung sowie Datenverarbeitung. Außerdem haben
-      Sie das Recht, die Berichtigung, die Sperrung oder Löschung Ihrer Daten zu verlangen. Ausgenommen davon sind
-      Daten, die aufgrund gesetzlicher Vorschriften aufbewahrt oder zur ordnungsgemäßen Geschäftsabwicklung benötigt
-      werden. Werden Daten nicht von einer gesetzlichen Archivierungspflicht erfasst, löschen wir Ihre Daten auf Ihren
-      Wunsch. Greift die Archivierungspflicht, sperren wir Ihre Daten. Für alle Fragen und Anliegen zur Berichtigung,
-      Sperrung oder Löschung von personenbezogenen Daten wenden Sie sich bitte an unseren Datenschutzbeauftragten
-      unter den Kontaktdaten in dieser Datenschutzerklärung bzw. an die im Impressum genannte Adresse.</p>
-  <h3>Server Logfiles</h3>
-  <p> Bei den Server Logfiles handelt es sich um anonymisierte Daten, die bei Ihrem Zugriff auf unsere Webseite
-      erfasst werden. Diese Informationen ermöglichen keine Rückschlüsse auf Sie persönlich, sind aber aus technischen
-      Gründen für die Auslieferung und Darstellung unserer Inhalte unverzichtbar. Weiterhin dienen Sie unserer
-      Statistik und der ständigen Optimierung unserer Inhalte. Typische Logfiles sind das Datum und die Zeit des
-      Zugriffs, die Datenmenge, der für den Zugriff benutzte Browser und seine Version, das eingesetzte
-      Betriebssystem, der Domainname des von Ihnen beauftragten Providers, ggf. die Seite, von der Sie zu unserem
-      Angebot gekommen sind (Referrer-URL) und die IP-Adresse über die Ihr Zugriff erfolgt ist.</p>
-  <h3>Cookies</h3>
-  <p>Diese Seiten verwenden keine Cookies.</p>
-  <h3>Haftungshinweis</h3>
-  <p> Trotz sorgfältiger inhaltlicher Kontrolle übernehmen wir keine Haftung für die Inhalte externer Links. Für den
-      Inhalt der verlinkten Seiten sind ausschließlich deren Betreiber verantwortlich.</p>
-  <p>Inhaltlich Verantwortlicher gemäß § 55 Abs. 2 RStV:</p>
-  <p>
-      <b>Arbeitsgemeinschaft der Vermessungsverwaltungen der Länder der Bundesrepublik Deutschland (AdV)</b><br>
-      basemap.de: Dr. Markus Seifert<br>
-      c/o Landesamt für Digitalisierung, Breitband und Vermessung
-  </p>
-  <p>
-      Alexandrastraße 4<br>
-      D-80538 München
-  </p>
-  <p>Telefon: +49 (0) 89 2129-1900</p>
-  <p>
-      <b>Inhaltlich verantwortlich:</b> Dr. Markus Seifert
-  </p>
-  <p>Diese Datenschutzerklärung wurde mit www.datenschutzexperte.de erstellt und angepasst.</p>
-  `
+  imprint: ''
 };
